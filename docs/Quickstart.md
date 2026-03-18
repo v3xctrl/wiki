@@ -1,6 +1,6 @@
 This guide is meant to get you up and running as quick as possible. It is structured in such a way that you can set things up step by step, validating correct functionality in each step.
 
-# 1. RPi Setup
+## 1. RPi Setup
 
 Prerequisites:
 * A Raspberry Pi Zero 2 W - without soldered pins
@@ -9,7 +9,7 @@ Prerequisites:
 
 Follow the [Streamer installation guide](Streamer.md), if you can connect to the web interface: `http://v3xctrl.local` you are ready for the next step.
 
-# 2. Viewer Setup
+## 2. Viewer Setup
 The Viewer is where the video feed will be displayed and your inputs connect to, basically the UI you will use to control your streamer.
 
 Download, extract and run the GUI for your operating system from the [releases section](https://github.com/stylesuxx/v3xctrl/releases/latest).
@@ -21,7 +21,7 @@ On the machine running the viewer, make sure the following ports are open (you m
 
 Take note of the **internal IP address** of the machine you are running the viewer on. It has to be in the same network that you set your streamer up to connect with in [step 1](#1-rpi-setup).
 
-# 3. Initial configuration
+## 3. Initial configuration
 While keeping the viewer running, open the streamers web interface: `http://v3xctrl.local`. In the server section make sure "_Connectino Mode_" is set to "_direct_". In the Host fiels, set the internal IP address of your viewer machine which you have established in [step 2](#step-2). Scroll to the bottom and click "_Save_".
 
 Now switch to the "_Services_" tab, find the `v3xctrl-control` service and click the "_Start_" button.
@@ -34,7 +34,7 @@ On the viewer open the menu by pressing **[ESC]**, switch to the "_Steramer_" ta
 
 In the web interface you can now set the control service to autostart on boot. Click the "_Config Editor_" tab, scroll down to "_Autostart_" and check "_control_". Scroll to the bottom and click "_Save_"
 
-# 4. Camera configuration
+## 4. Camera configuration
 
 Prerequisites:
 * A Raspberry Pi Zero 2W compatible camera 
@@ -46,10 +46,10 @@ With the viewer running, you will have an indication once the control service au
 
 On the viewer, open the menu by pressing **[ESC]**, switch to the "_Streamer_" tab and dlick the "Start Video" button, click "_Back_" on the bottom right and after a couple of seconds you should see the camera image in the viewer.
 
-# 5. Peripherals
+## 5. Peripherals
 Following the [pinout guide](Pinout.md), connect your hardware. You can attach everything at once, or do it step by step for easier debugging. Attaching things step by step will make your life easier since you will only ever have one thing to debug before progressing to the next step, being confident that what you just set up is actually working.
 
-## 5.a Servo and ESC
+### 5.a Servo and ESC
 
 Prerequisites:
 * ESC
@@ -63,19 +63,19 @@ Make sure ESC has power and the servo is being powered from the ESC too. Start t
 
 Once connected to the viewer, use **[w]**, **[s]**, **[a]**, **[d]** buttons to test that ESC and Servo are reacting to inputs.
 
-### Servo
+#### Servo
 If the servo is moving in the wrong direction, go to the "_Controls_" section, expand it, scroll down to "_Steering_" and check the "_invert Steering_" checkbox.
 
 > You can go through the full [Calibration](Calibration.md) step now, or leave it for after you are done with the base configuration.
 
-## 5.b Power supply
+### 5.b Power supply
 
 Prerequisites:
 * 5V power supply, preferably a high quality 5V buck converter powered from a Lipo battery
 
 Before connecting the 5V power supply, make sure the Raspberry Pi is no longer powered via power brick. Connect the 5V power supply to `5V` and `GND`. Double check polarization. Make sure the streamer will boot from your power source.
 
-## 5.c Voltage sensor
+### 5.c Voltage sensor
 
 Prerequisites:
 * INA231 or INA226
@@ -86,7 +86,7 @@ Voltage sensor is not mandatory, but highly recommended if you want to get the m
 
 Attach your power source, wait for the streamer to boot up and verify with the viewer that voltage telemetry is being transmitted.
 
-# 6. Modem Setup
+## 6. Modem Setup
 Now that everything has been tested on the local network, the last step is to add the modem. Follow the steps in the [SIM card documentation](SIM.md) to prepare your SIM card. Insert the SIM card into your modem and attach the modem to the streamer.
 
 Boot up the streamer, use the web-interface `http://v3xctrl.local` and go to the "_Modem_" tab.
@@ -109,7 +109,7 @@ You know everything is working if you can see the OSD change in the viewer. You 
 
 > To make absolutely sure the modem is being used to transmit data you can connect to the streamer via `ssh` and use `nload` to verify the network device being used. If you see traffic on `eth0`, that is the modem.
 
-# 7. Next steps
+## 7. Next steps
 Congratulations, now that the base setup is completed, there is a couple things you can do next:
 
 * [Calibration](Calibration.md)

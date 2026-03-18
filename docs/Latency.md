@@ -1,4 +1,4 @@
-# Latency
+## Latency
 
 This flow chart illustrates where latency occurs in the system. We consider two chains:
 
@@ -70,7 +70,7 @@ Combined latency (video + control round-trip) is therefore in the range of **75â
 
 When using a UDP Relay instead of a direct connection, expect **additional latency of 6â€“8 ms** due to extra packet processing and routing through the relay server. The increase is typically negligible compared to total pipeline latency but may add up if the relay server is geographically distant.
 
-# Measuring Latency
+## Measuring Latency
 
 ## Network Latency
 On the control channel, we are sending Latency packets to measure network latency. Those packets are measuring round trip time:
@@ -128,7 +128,7 @@ Our **unaccounted latency is 61.9ms**. This has to be latency from things we can
 
 > **Note:** The display being filmed by the camera adds its own input lag to the measurement. This is unavoidable when using a camera-based glass-to-glass test. In the real-world use case, this display latency wouldn't exist since you're filming the real world, not a monitor.
 
-# Real world latency tests
+## Real world latency tests
 As you can see from above, latency has a LOT of variables, when testing, we want to reduce as many variables as possible, to do so we will run all the tests at the same settings:
 
 * 1.8Mbit target
@@ -170,7 +170,7 @@ Now this will depend on provider, location, band and reception. This is measured
 
 > **NOTE:** This is a great example of fluctuations. Uncapped should improve by max 15ms, but in this case we could also see lower latency in general while doing the uncapped test.
 
-# Pushing latency
+## Pushing latency
 
 > **NOTE:** When testing settings on the streamer and watching the logs, it is important to compare a consistent image, for this it makes sense to put something over the camera to have a black image. This obviously simulates a "best case" for the pipeline since the image is not changing at all, a "worst case" for the camera since it needs the longest exposure time, but also allows for easy comparisons.
 
