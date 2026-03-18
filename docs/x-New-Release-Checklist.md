@@ -16,9 +16,9 @@ Most issues should be caught by the extensive test suite, a manual check should 
 
 * [ ] Can open menu
 * [ ] Can switch tabs
-* [ ] Can close menu (via [ESC] and back button)
+* [ ] Can close menu (via ++esc++ and back button)
 * [ ] General: Disabling connection info works
-* [ ] General: Fullscreen toggle works via checkbox and [F11] (updates the checkbox correctly)
+* [ ] General: Fullscreen toggle works via checkbox and ++f11++ (updates the checkbox correctly)
 * [ ] Input: Detects gamepad for calibration
 * [ ] Input: Can calibrate Gamepad
 * [ ] Input: Saves calibration between restarts
@@ -49,7 +49,7 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Debug widgets are updating correctly
 * [ ] Reception widget is updating correctly
 * [ ] Battery widget is updating correctly
-* [ ] Toggling fullscreen with [F11] works
+* [ ] Toggling fullscreen with ++f11++ works
 * [ ] Fullscreen setting remembered between restarts
 * [ ] Saving settings is working (settings are reloaded after viewer restart)
 * [ ] Debug flag shows additional output

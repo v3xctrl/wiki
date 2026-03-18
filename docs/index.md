@@ -29,7 +29,7 @@ Now switch to the "_Services_" tab, find the `v3xctrl-control` service and click
 
 In the viewer you should now see the "Latency" and "Data" field changing, further, the "No control signal" message should have disappeared.
 
-On the viewer open the menu by pressing **[ESC]**, switch to the "_Steramer_" tab and click the "_Start Video_" button, click "_Back_" on the bottom right and after a couple of seconds you should see a Test image in the viewer.
+On the viewer open the menu by pressing ++esc++, switch to the "_Steramer_" tab and click the "_Start Video_" button, click "_Back_" on the bottom right and after a couple of seconds you should see a Test image in the viewer.
 
 > Congratulations - you have established your first connection!
 
@@ -46,7 +46,7 @@ Shut down your streamer via web-interface and attach your Raspberry Pi Zero 2W c
 
 With the viewer running, you will have an indication once the control service autostarts and connects to the viewer. Now open the web-interface, scroll down to the "_Video_" section and expand it. Scroll down to the "_Test image_" checkbox and uncheck it. Scroll to the bottom and click "Save".
 
-On the viewer, open the menu by pressing **[ESC]**, switch to the "_Streamer_" tab and dlick the "Start Video" button, click "_Back_" on the bottom right and after a couple of seconds you should see the camera image in the viewer.
+On the viewer, open the menu by pressing ++esc++, switch to the "_Streamer_" tab and dlick the "Start Video" button, click "_Back_" on the bottom right and after a couple of seconds you should see the camera image in the viewer.
 
 ## 5. Peripherals
 Following the [pinout guide](Pinout.md), connect your hardware. You can attach everything at once, or do it step by step for easier debugging. Attaching things step by step will make your life easier since you will only ever have one thing to debug before progressing to the next step, being confident that what you just set up is actually working.
@@ -64,7 +64,7 @@ ESC should be connected to `GND` and `PWM1`, Servo should be connected to `GND` 
 
 Make sure ESC has power and the servo is being powered from the ESC too. Start the streamer.
 
-Once connected to the viewer, use **[w]**, **[s]**, **[a]**, **[d]** buttons to test that ESC and Servo are reacting to inputs.
+Once connected to the viewer, use ++w++, ++s++, ++a++, ++d++ buttons to test that ESC and Servo are reacting to inputs.
 
 #### Servo
 If the servo is moving in the wrong direction, go to the "_Controls_" section, expand it, scroll down to "_Steering_" and check the "_invert Steering_" checkbox.

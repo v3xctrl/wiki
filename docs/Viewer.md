@@ -4,7 +4,7 @@ We provide multiple options for the viewer
 We offer stand alone apps for Windows and Linux, you can download them from the [releases](https://github.com/stylesuxx/v3xctrl/releases).
 
 ### Usage
-Press `[ESC]` at any time to toggle the menu.
+Press ++esc++ at any time to toggle the menu.
 
 Settings will be applied after you hit the "Save" button and click "Back".
 
