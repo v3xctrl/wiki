@@ -11,13 +11,13 @@ This is a list of tested and recommended Hardware. **Recommended** means it has 
 
 | Cam | Pros | Cons | Setup | Settings |
 |-----|------|------|-------|----------|
-|Raspberry Pi Cam V3 | + HDR  <br/> + different FOV options <br/> + No IR option for darkness<br/> + good noise handling<br /> + high resoluiton (12MP)| - autofocus (*)<br /> - expensive | Works out of the box | Brightness, Sharpness, Contrast, Saturation, Focus (Auto & Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
-|Arducam 12MP IMX708|+ HDR<br/> + M12 lens (**)<br/> + small PCB<br/> + high resoluiton (12MP)| - availability<br /> - expensive | [additional Setup](#arducam-12mp-imx708) | Brightness, Sharpness, Contrast, Saturation, Focus (Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
-|OV5647|+ fixed focus<br/> + Inexpensive<br/> + M12 lens (**)<br/>|- low resolution (5MP)<br/> - no HDR<br/> - pyhsical size<br/>| Works out of the box | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
-|IMX219|+ fixed focus<br/> + Inexpensive<br/> + M12 lens (**)<br/> +physical size <br/>|- medium resolution (8MP)<br/> - no HDR<br/>| [additional Setup](#imx219-arducam-8mp) | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
+|Raspberry Pi Cam V3 | + HDR  <br/> + different FOV options <br/> + No IR option for darkness<br/> + good noise handling<br /> + high resoluiton (12MP)| - autofocus [^1]<br /> - expensive | Works out of the box | Brightness, Sharpness, Contrast, Saturation, Focus (Auto & Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
+|Arducam 12MP IMX708|+ HDR<br/> + M12 lens [^2]<br/> + small PCB<br/> + high resoluiton (12MP)| - availability<br /> - expensive | [additional Setup](#arducam-12mp-imx708) | Brightness, Sharpness, Contrast, Saturation, Focus (Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
+|OV5647|+ fixed focus<br/> + Inexpensive<br/> + M12 lens [^2]<br/>|- low resolution (5MP)<br/> - no HDR<br/> - pyhsical size<br/>| Works out of the box | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
+|IMX219|+ fixed focus<br/> + Inexpensive<br/> + M12 lens [^2]<br/> +physical size <br/>|- medium resolution (8MP)<br/> - no HDR<br/>| [additional Setup](#imx219-arducam-8mp) | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
 
-* (*) Autofocus is a downside for our use-case because the lens assembly will shake during operation
-* (**) M12 lenses are a standard and can be exchanged for other lenses
+[^1]: Autofocus is a downside for our use-case because the lens assembly will shake during operation
+[^2]: M12 lenses are a standard and can be exchanged for other lenses
 
 ### Additional Setup
 Some cameras require additional setup to work at all, or have some recommended additional settings.
