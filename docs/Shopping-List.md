@@ -1,0 +1,32 @@
+For most parts you will find different vendors, this list is a reference of where we buy our parts. Some of the links are affiliate links and we will get a small commission from your purchase without any additional costs to you. There is more details about each part in the [Hardware section](/hardware.md).
+
+## EU
+| Part | Vendor | Aliexpress | Amazon |Comment|
+|------|--------|------------|--------|-------|
+|Modem ||[select CAT 1 EU](https://s.click.aliexpress.com/e/_c4r8bWlB)|| This one is ONLY available via Aliexpress, we could not find it listed anywhere else.|
+|Voltage sensor||[select INA231](https://s.click.aliexpress.com/e/_c4q9D3ed)|[INA226](https://www.amazon.de/-/en/CJMCU-226-Voltage-Current-Function-Bi-Directional/dp/B0CS3ZMWCJ)| INA231 is slightly smaller|
+|RPi Zero 2 W| [Welectron](https://www.welectron.com/Raspberry-Pi-Zero-2-W), [Reichelt](https://www.reichelt.de/de/de/shop/produkt/raspberry_pi_zero_2_w_4x_1_ghz_512_mb_ram_wlan_bt-313902?utm_source=psuma&utm_medium=geizhals.de&PROVID=2), [BerryBase](https://www.berrybase.de/raspberry-pi-zero-2-w) | (**) | [RPi Zero 2 W](https://www.amazon.de/dp/B09KLVX4RT)|Preferably source from your local dealer. Use version without headers.|
+|RPi camera v3 (*)|[Reichelt](https://www.reichelt.de/de/de/shop/produkt/raspberry_pi_-_kamera_12mp_120_v3-339260), [BerryBase](https://www.berrybase.de/raspberry-pi-camera-module-3-wide-12mp) | (**) | [RPi Cam v3](https://www.amazon.de/-/en/Raspberry-Camera-Module-Wide-Controlled/dp/B0BRY757NX) | Choose the "wide" option|
+|Arducam (*)|[mybotshop](https://www.mybotshop.de/Arducam-12MP-IMX708-HDR-120-Camera-Module-with-M12-Lens_1), [Antratek](https://www.antratek.de/arducam-12mp-imx708) | (**) | | Same sensor as the RPi camera v3, but no autofocus. Sometimes difficult to get.|
+|Ribbon Cable|[Reichelt](https://www.reichelt.de/de/de/shop/produkt/raspberry_pi_-_flachbandkabel_fuer_kamera_20_cm-360118), [BerryBase](https://www.berrybase.de/raspberry-pi-camera-cable-standard-mini-200mm) | [8, 16 & 30cm pack](https://s.click.aliexpress.com/e/_c3C1rW0N) | [16cm](https://www.amazon.de/-/en/ZDE-Camera-Flexible-Compatible-Raspberry/dp/B0DQ9KYNB3/ref=sr_1_18)|The arducam comes with a matching one, for the picam you need one with mini connector. They come in different lengths, chose the right one for your build.|
+|SD Card| [Reichelt](https://www.reichelt.de/de/de/shop/produkt/microsdhc-speicherkarte_32gb_sandisk_max_endurance-298160), [BerryBase](https://www.berrybase.de/sandisk-max-endurance-microsdhc-uhs-i-u3-speicherkarte-adapter-32gb) | | [SanDisk Max Endurance 32GB](https://www.amazon.de/-/en/SanDisk-Endurance-Monitoring-microSDHC-Adaptor/dp/B084CJLNM4) | Buy a good quality one, 32GB is enough and should give you hours of onboard recording |
+|5V Step Down|[BerryBase - 1A](https://www.berrybase.de/pololu-5v-1a-step-down-spannungsregler-d24v10f5)| [3A](https://s.click.aliexpress.com/e/_c3CsY593) | | This one depends a bit on how you are planning on powering your RPi. Recommended to power from the 5V rail with a clean voltage. 1A is fine for RPi & Modem. The options on Amazon are hit and miss - buy quality one! **NOTE:** Be careful with powering from your ESC, often times they output more than 5V. Avoid variable ones - the potentiometer is a liability.|
+| USB UART | [BerryBase](https://www.berrybase.de/waveshare-cp2102-usb-c-zu-uart-modul-led-indikatoren-txd-rxd-rts-cts-multikompatibel-5v-3.3v) | [select USB C](https://s.click.aliexpress.com/e/_c3q7kWDJ)|[CP2102 - USB C](https://www.amazon.de/-/en/Heevhas-CP2102-Converter-Adapter-Downloader/dp/B0DRFZZM71)|Optional. Great for debugging, mandatory for development. Any FTDI adapter will do - make sure it does support 3.3V. |
+
+## US
+| Part | Vendor | Aliexpress | Amazon |Comment|
+|------|--------|------------|--------|-------|
+|Modem ||[select CAT 1 US](https://s.click.aliexpress.com/e/_c2Qgww4N)|| This one is ONLY available via Aliexpress, we could not find it listed anywhere else.|
+|Voltage sensor | ??? | [select INA231](https://s.click.aliexpress.com/e/_c3g1D8UN)|[INA226](https://www.amazon.com/Voltage-Current-Monitoring-Function-Bi-Directional/dp/B0DG5BKRLB)| INA231 is slightly smaller|
+|RPi Zero 2 W| ??? | (**) | [RPi Zero 2 W](https://www.amazon.com/Raspberry-Zero-Bluetooth-RPi-2W/dp/B09LH5SBPS)|Preferably source from your local dealer. Use version without headers.|
+|RPi camera v3 (*)| ??? | (**) | [RPi Cam v3](https://www.amazon.com/Raspberry-Pi-Camera-Module/dp/B0BRY6MVXL) | Choose the "wide" option|
+|Arducam (*)| ??? | (**) | [IMX 708](https://www.amazon.com/Arducam-Raspberry-Camera-Module-IMX708/dp/B0BZR6XL3Y) | Same sensor as the RPi camera v3, but no autofocus. Sometimes difficult to get.|
+|Ribbon Cable| ??? | [8, 16 & 30cm pack](https://s.click.aliexpress.com/e/_c3XjgtPr) | [8, 16 & 30cm pack](https://www.amazon.com/Arducam-Raspberry-Camera-Ribbon-Extension/dp/B085RW9K13)|The arducam comes with a matching one, for the picam you need one with mini connector. They come in different lengths, chose the right one for your build.|
+| SD Card | ??? | | [SanDisk Max Endurance 32GB](amazon.com/SanDisk-Endurance-microSDHC-Adapter-Security/dp/B084CJLNM4) | Buy a good quality one, 32GB is enough and should give you hours of onboard recording |
+|5V Step Down| ??? | [3A](https://s.click.aliexpress.com/e/_c4KL3SSh) | | This one depends a bit on how you are planning on powering your RPi. Recommended to power from the 5V rail with a clean voltage. 1A is fine for RPi & Modem. The options on Amazon are hit and miss - buy quality one! **NOTE:** Be careful with powering from your ESC, often times they output more than 5V. Avoid variable ones - the potentiometer is a liability.|
+| USB UART | ??? | [select USB C](https://s.click.aliexpress.com/e/_c4tMNLUh)|[CP2102 - USB C](https://www.amazon.com/CP2102-Communication-Converter-Compatible-Connector/dp/B09F6CZBYT)|Optional. Great for debugging, mandatory for development. Any FTDI adapter will do - make sure it does support 3.3V. |
+
+* (*) Select one of the camera options
+* (**) You will find those parts on Aliexpress but **significantly more expensive** than your local dealer
+
+You can buy almost everything on Amazon, but it will be more expensive. I highly recommend you to go through Aliexpress. It will take a bit longer but, significantly cheaper and you will have to source the modem from there anyway. Buying RPi should easily be possible locally, there is an [official reseller list](https://www.raspberrypi.com/resellers).

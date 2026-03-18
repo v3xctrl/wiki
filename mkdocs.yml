@@ -1,0 +1,85 @@
+site_name: v3xctrl Wiki
+site_url: https://stylesuxx.github.io/v3xctrl-wiki/
+repo_url: https://github.com/stylesuxx/v3xctrl
+repo_name: stylesuxx/v3xctrl
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+  - tables
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Quickstart: Quickstart.md
+    - Terminology: Terminology.md
+    - Motivation: Motivation.md
+    - Shopping List: Shopping-List.md
+  - Hardware:
+    - Compatible Hardware: Hardware.md
+    - Pinout: Pinout.md
+    - Antennas: Antennas.md
+    - Modems: Modems.md
+    - SIM: SIM.md
+  - Setup:
+    - Controller Setup: Controller-Setup.md
+    - Streamer: Streamer.md
+    - Web Interface: Web-Interface.md
+    - Calibration: Calibration.md
+    - Input Devices: Input-devices.md
+    - UART: UART.md
+  - Networking:
+    - Connection Types: Connection-Types.md
+    - Carriers: Carriers.md
+    - Network Testing: Network-Testing.md
+    - Latency: Latency.md
+    - Control Channel: Control-Channel.md
+  - Viewer:
+    - Viewer: Viewer.md
+    - Video Receiver Backends: Video-Receiver-Backends.md
+    - Tuning Encoder Settings: Tuning-encoder-settings.md
+  - Troubleshooting:
+    - Troubleshooting: Troubleshooting.md
+    - FAQ: FAQ.md
+    - Known Issues: Known-Issues.md
+    - Limitations: Limitations.md
+  - Development:
+    - Development: Development.md
+    - Release: x-Release.md
+    - New Release Checklist: x-New-Release-Checklist.md
+    - OS Update Checklist: x-OS-Update-Checklist.md
+    - OS Benchmarks: x-OS-Benchmarks.md
