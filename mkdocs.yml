@@ -56,20 +56,20 @@ nav:
     - Motivation: Motivation.md
   - Streamer:
     - Streamer: Streamer.md
-    - Web Interface: Web-Interface.md
     - Pinout: Pinout.md
     - Compatible Hardware: Hardware.md
+    - Web Interface: Web-Interface.md
+    - Calibration: Calibration.md
+    - Tuning Encoder Settings: Tuning-encoder-settings.md
     - Modems: Modems.md
     - SIM: SIM.md
     - Antennas: Antennas.md
-    - Calibration: Calibration.md
     - UART: UART.md
-    - Tuning Encoder Settings: Tuning-encoder-settings.md
   - Viewer:
     - Viewer: Viewer.md
-    - Video Receiver Backends: Video-Receiver-Backends.md
-    - Controller Setup: Controller-Setup.md
     - Input Devices: Input-devices.md
+    - Controller Setup: Controller-Setup.md
+    - Video Receiver Backends: Video-Receiver-Backends.md
   - Networking:
     - Connection Types: Connection-Types.md
     - Network Testing: Network-Testing.md
