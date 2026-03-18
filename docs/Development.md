@@ -36,6 +36,7 @@ source ./venv/bin/activate
 ```
 
 Install 3rd party libraries:
+
 * libcairo2
 
 On Debian (and derivates) run:

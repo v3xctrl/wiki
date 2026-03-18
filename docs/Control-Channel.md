@@ -31,6 +31,7 @@ All messages subclass a common `Message` base class. Each message is serialized 
 This approach is **not the most resource-efficient** due to serialization overhead, but it is simple to implement, extend, and debug.
 
 Each packet includes:
+
 * `type` — identifies which message class to reconstruct
 * `timestamp` — allows sequencing and discarding out-of-order packets
 * `payload` — the message data (can be empty for simple messages)
@@ -54,6 +55,7 @@ Control packets are sent based on input changes. Input is sampled in a **game lo
 Failsafe is an action triggered when a disconnect occurs in the UDP communication system. It acts as a safety mechanism to handle loss of connection.
 
 The UDP receiver cycles through three states:
+
 * Waiting – Idle, waiting for a connection.
 * Connected – A connection has been established.
 * Disconnected – The connection was lost or timed out.

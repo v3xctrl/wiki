@@ -1,6 +1,7 @@
 The default settings should work reliable in most cases, but they are not the optimum in all cases.
 
 The perfect settings depend on a lot of factors:
+
 * Available Bandwidth
 * Lightning situation indoor/outdoor/day/night
 * Quickly changing image (crawler vs. racecar)
@@ -25,6 +26,7 @@ Once you found your preferred settings, you can tighten them up a bit:
 Szenario: Driving a small 1/8 crawler inside the flat in a big city with good LTE coverage. There is some natural light but most of the driving is happening in the evening/night with artificial lightning.
 
 We start with the default values:
+
 * FPS: 30
 * I-frame Interval: 15
 * Bitrate: 1.8Mbps

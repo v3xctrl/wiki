@@ -42,6 +42,7 @@ Connect your peripherals according to the following pinout:
 The only really mandatory connections are `PWM1` and `PWM2` for Servo and Speed-controller. The INA is highly recommended for Voltage monitoring.
 
 UART0 is the only available hardware UART and can be used for one of the following:
+
 * Serial console - great for debugging
 * GPS
 
@@ -56,6 +57,7 @@ Best option to power the RPI and Modem directly through the 5V rail with a clean
 Voltage is measured via bus pin, not the main pins over the shunt - those are only used for current sensing (which is not yet implemented).
 
 Tested options:
+
 * INA226
 * INA231
 * INA219

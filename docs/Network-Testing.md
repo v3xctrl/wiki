@@ -122,6 +122,7 @@ The last line also shows us packet loss: **0%** (Can't get any better than this,
 Looking at the jitter column, we want to find the maximum jitter, which is **2.295 ms** - this happened during seconds 6-7.
 
 When looking at the values, the weight is as follows, from most important to least important:
+
 * Lowest possible max jitter
 * Lowest possible average jitter
 * Lowest possible packet loss

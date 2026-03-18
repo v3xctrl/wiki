@@ -3,6 +3,7 @@ This guide is meant to get you up and running as quick as possible. It is struct
 ## 1. RPi Setup
 
 Prerequisites:
+
 * A Raspberry Pi Zero 2 W - without soldered pins
 * A good quality SD card - preferably 32GB, Class 10, U3
 * Power supply to power the Raspberry Pi
@@ -37,6 +38,7 @@ In the web interface you can now set the control service to autostart on boot. C
 ## 4. Camera configuration
 
 Prerequisites:
+
 * A Raspberry Pi Zero 2W compatible camera 
 * Some cameras may need additional setup. You can check out the [Hardware](Hardware.md#cameras) section of the wiki for instructions.
 
@@ -52,6 +54,7 @@ Following the [pinout guide](Pinout.md), connect your hardware. You can attach e
 ### 5.a Servo and ESC
 
 Prerequisites:
+
 * ESC
 * Servo
 
@@ -71,6 +74,7 @@ If the servo is moving in the wrong direction, go to the "_Controls_" section, e
 ### 5.b Power supply
 
 Prerequisites:
+
 * 5V power supply, preferably a high quality 5V buck converter powered from a Lipo battery
 
 Before connecting the 5V power supply, make sure the Raspberry Pi is no longer powered via power brick. Connect the 5V power supply to `5V` and `GND`. Double check polarization. Make sure the streamer will boot from your power source.
@@ -78,6 +82,7 @@ Before connecting the 5V power supply, make sure the Raspberry Pi is no longer p
 ### 5.c Voltage sensor
 
 Prerequisites:
+
 * INA231 or INA226
 
 Voltage sensor is not mandatory, but highly recommended if you want to get the most out of your batteries. Connect the INA of your chosing to `3.3V`, `GND`, `SDA` and `SCL`. Finally connect the `VBUS` pin of your INA to the battery positive plug.
