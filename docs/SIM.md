@@ -42,7 +42,7 @@ AT+CPIN?
 +CME ERROR: 10
 ```
 
-#### Check tat the SIM is registered with the carrier
+#### Check that the SIM is registered with the carrier
 
 ```bash
 AT+COPS?
@@ -69,9 +69,9 @@ AT+CGDCONT?
 # FAIL
 ```
 
-In case (1) we have an IPV4V6 context. Also we are using the ctnet APN - for chinese telekom. But we are not registered to this carrier - still we get an IP address and internet is working. This means that most likely the provider ignores the wrong APN and rewrites to the default APN on the backend.
+In case (1) we have an IPV4V6 context. Also we are using the ctnet APN - for Chinese Telekom. But we are not registered to this carrier - still we get an IP address and internet is working. This means that most likely the provider ignores the wrong APN and rewrites to the default APN on the backend.
 
-When checking the public IP address, it turns out, that it in-fact belongs to A1.
+When checking the public IP address, it turns out, that it in fact belongs to A1.
 
 
 ##### Setting APN
@@ -111,7 +111,7 @@ AT+CGDCONT?
 +CGDCONT: 1,"IP","webapn.at","10.73.79.219",0,0
 ```
 ## Switching SIMs
-Switching between SIM cards is easily possible if you ran through the setup steps above. Just insert the new SIM card and powercycle the streamer (or reset the modem via AT commands).
+Switching between SIM cards is easily possible if you ran through the setup steps above. Just insert the new SIM card and power-cycle the streamer (or reset the modem via AT commands).
 
 ```bash
 AT+CFUN=1,1
@@ -124,14 +124,14 @@ We have found that some SIM cards will not automatically register when roaming i
 AT*BAND=5,0,0,482,149,1,1,0
 ```
 
-Roaming is the third to last parameter, you can verify it the following way:
+Roaming is the third to last parameter, you can verify it in the following way:
 
 ```bash
 AT*BAND=5,0,0,482,149
 AT+CFUN=1,1
 ```
 
-If your SIM does no longer automatically connect, pass the parameter to disable roaming and see the SIM automagically register:
+If your SIM no longer automatically connects, pass the parameter to disable roaming and see the SIM automagically register:
 
 ```bash
 AT*BAND=5,0,0,482,149,1
@@ -145,7 +145,7 @@ Alternatively you can try forcing registration with a certain carrier:
 AT+COPS=1,2,"23201"
 ```
 
-## Miscelanious and maybe helpful
+## Miscellaneous and maybe helpful
 
 Full reset and auto connect setup
 ```bash

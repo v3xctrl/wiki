@@ -11,10 +11,10 @@ This is a list of tested and recommended Hardware. **Recommended** means it has 
 
 | Cam | Pros | Cons | Setup | Settings |
 |-----|------|------|-------|----------|
-|Raspberry Pi Cam V3 | + HDR  <br/> + different FOV options <br/> + No IR option for darkness<br/> + good noise handling<br /> + high resoluiton (12MP)| - autofocus [^1]<br /> - expensive | Works out of the box | Brightness, Sharpness, Contrast, Saturation, Focus (Auto & Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
-|Arducam 12MP IMX708|+ HDR<br/> + M12 lens [^2]<br/> + small PCB<br/> + high resoluiton (12MP)| - availability<br /> - expensive | [additional Setup](#arducam-12mp-imx708) | Brightness, Sharpness, Contrast, Saturation, Focus (Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
-|OV5647|+ fixed focus<br/> + Inexpensive<br/> + M12 lens [^2]<br/>|- low resolution (5MP)<br/> - no HDR<br/> - pyhsical size<br/>| Works out of the box | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
-|IMX219|+ fixed focus<br/> + Inexpensive<br/> + M12 lens [^2]<br/> +physical size <br/>|- medium resolution (8MP)<br/> - no HDR<br/>| [additional Setup](#imx219-arducam-8mp) | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
+|Raspberry Pi Cam V3 | + HDR  <br/> + different FOV options <br/> + No IR option for darkness<br/> + good noise handling<br /> + high resolution (12MP)| - autofocus [^1]<br /> - expensive | Works out of the box | Brightness, Sharpness, Contrast, Saturation, Focus (Auto & Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
+|Arducam 12MP IMX708|+ HDR<br/> + M12 lens [^2]<br/> + small PCB<br/> + high resolution (12MP)| - availability<br /> - expensive | [additional Setup](#arducam-12mp-imx708) | Brightness, Sharpness, Contrast, Saturation, Focus (Manual), Exposure (Auto & Manual), Gain (Auto & Manual) |
+|OV5647|+ fixed focus<br/> + Inexpensive<br/> + M12 lens [^2]<br/>|- low resolution (5MP)<br/> - no HDR<br/> - physical size<br/>| Works out of the box | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
+|IMX219|+ fixed focus<br/> + Inexpensive<br/> + M12 lens [^2]<br/> + physical size <br/>|- medium resolution (8MP)<br/> - no HDR<br/>| [additional Setup](#imx219-arducam-8mp) | Brightness, Sharpness, Contrast, Saturation, Exposure (Auto & Manual), Gain (Auto & Manual) |
 
 [^1]: Autofocus is a downside for our use-case because the lens assembly will shake during operation
 [^2]: M12 lenses are a standard and can be exchanged for other lenses
@@ -40,7 +40,7 @@ After rebooting, make sure that the camera is picked up properly:
 dmesg | grep imx708
 ```
 
-This should show output similar to following
+This should show output similar to the following
 
 ```
 [   12.173300] imx708 10-001a: camera module ID 0x0302
@@ -96,10 +96,10 @@ Our main platform is the **Raspberry Pi Zero 2 W** but you can also use:
 
 ### Voltage Sensor
 
-* [INA266](https://s.click.aliexpress.com/e/_om5BMkb) - slightly bigger than the INA231, but more readily available on places like Amazon
+* [INA226](https://s.click.aliexpress.com/e/_om5BMkb) - slightly bigger than the INA231, but more readily available on places like Amazon
 
 ### V3xctrl PCB
-If you are using the v3xctrl PCB, you need to set `Shuntresistance` to 5 milliohm and the `Max Expected Current` to 16A to get correct power draw readings.
+If you are using the v3xctrl PCB, you need to set `Shunt resistance` to 5 milliohm and the `Max Expected Current` to 16A to get correct power draw readings.
 
 ## Potential Candidates
 

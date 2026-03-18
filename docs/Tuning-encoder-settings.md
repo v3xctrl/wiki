@@ -1,9 +1,9 @@
-The default settings should work reliable in most cases, but they are not the optimum in all cases.
+The default settings should work reliably in most cases, but they are not the optimum in all cases.
 
 The perfect settings depend on a lot of factors:
 
 * Available Bandwidth
-* Lightning situation indoor/outdoor/day/night
+* Lighting situation indoor/outdoor/day/night
 * Quickly changing image (crawler vs. racecar)
 
 To find the optimum for your situation, follow these steps:
@@ -17,13 +17,13 @@ To find the optimum for your situation, follow these steps:
 7. Check the video service log - look for dropped packets here
 8. Check your viewer log - max jitter is a good indicator: if it is too high, it is a confirmation for stutter
 
-If you did not see stutters and the log does not show any dropped frames, you can repeat steps 4-7, going lower with `Min QP` und higher with `Maximum I-frame bytes`.
+If you did not see stutters and the log does not show any dropped frames, you can repeat steps 4-7, going lower with `Min QP` and higher with `Maximum I-frame bytes`.
 
 Once you found your preferred settings, you can tighten them up a bit:
 1. Check the video service log and have a look at the I-frame sizes. If you see that the sizes never come close to your `Maximum I-frame bytes` size, just lower that setting to be closer to real world circumstances. This will help you handling spikes better should the circumstances change.
 
 ## Example tuning session
-Szenario: Driving a small 1/8 crawler inside the flat in a big city with good LTE coverage. There is some natural light but most of the driving is happening in the evening/night with artificial lightning.
+Scenario: Driving a small 1/8 crawler inside the flat in a big city with good LTE coverage. There is some natural light but most of the driving is happening in the evening/night with artificial lighting.
 
 We start with the default values:
 
@@ -50,7 +50,7 @@ Time to drive! I am connected via SSH and follow the video service log:
 journalctl -u v3xctrl-video -f
 ```
 
-In the back corners of my flat I see that frames start being dropped, but generally speaking, things are looking good. In the viewer I don't see stuttter and the max Jitter is well below 100 ms.
+In the back corners of my flat I see that frames start being dropped, but generally speaking, things are looking good. In the viewer I don't see stutter and the max Jitter is well below 100 ms.
 
 I-frame size stays way below my set maximum of 88KB - sometimes the I-frame size spikes up to 53KB. At this point I am quite happy with how things are, I set `Maximum I-frame bytes` to 61440 (60KB). Just to have a sane limit which does not get hit anyway, but at least I can be sure to not go over this size should any factor change.
 

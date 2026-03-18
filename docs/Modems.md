@@ -2,7 +2,7 @@ This is a knowledge base for supported modems. Documentation is sparse at times,
 
 ## Zero-4G-CAT1-Hub
 
-This is the modem most widely available on AliExpress, sold under different  names by different vendors. The actual OEM appears to be **Mcuzone**.
+This is the modem most widely available on AliExpress, sold under different names by different vendors. The actual OEM appears to be **Mcuzone**.
 It comes in **four distinct versions**, usually labeled on top of the MCU:
 
 | Model    | Bands | GPS | Speed |
@@ -12,7 +12,7 @@ It comes in **four distinct versions**, usually labeled on top of the MCU:
 | CAT1-EU  | 1, 3, 7, 8, 20, 28 | No  | 10Mbps down, 5Mbps up |
 | CAT1-EA  | 1, 3, 5, 7, 8, 28 | No  | 10Mbps down, 5Mbps up |
 
-> **TIP:** Check which LTE bands are used by your carrier in your area on [cellmapper.net](https://www.cellmapper.net/map) before purchasing a modem..
+> **TIP:** Check which LTE bands are used by your carrier in your area on [cellmapper.net](https://www.cellmapper.net/map) before purchasing a modem.
 
 
 ### Enabling All Factory-Supported Bands
@@ -157,7 +157,7 @@ AT*BANDIND?
 Here, the middle number (`3`) is the LTE band currently in use.
 
 ## Modem Test
-The following AT commands must be understood by the modem, otherwise ATlib has to be undated accordingly:
+The following AT commands must be understood by the modem, otherwise ATlib has to be updated accordingly:
 
 GSM and LTE commands should be understood by any modem, the rest might need some custom adaptations per modem.
 

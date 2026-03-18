@@ -6,7 +6,7 @@ Low latency is our **#1 priority**, and all technology choices are made accordin
 
 > QUIC is designed for low latency but adds reliability and encryption we don’t need here.
 
-UDP in the context of a 4G networks has a couple downsides:
+UDP in the context of 4G networks has a couple downsides:
 1. **Carrier restrictions:** Some carriers may filter or rate-limit UDP traffic, though this is uncommon.
 2. **CGNAT:** Most 4G networks use Carrier-Grade NAT, meaning the streamer does not have a dedicated public IP. We rely on **UDP hole punching** to establish connectivity:
 

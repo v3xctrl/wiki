@@ -22,7 +22,7 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Input: Detects gamepad for calibration
 * [ ] Input: Can calibrate Gamepad
 * [ ] Input: Saves calibration between restarts
-* [ ] Input: Saves calibration for multiple gampepads/wheels
+* [ ] Input: Saves calibration for multiple gamepads/wheels
 * [ ] Input: can map buttons on gamepad
 * [ ] Input: can set deadband on gamepad
 * [ ] Input: can invert axis on gamepad
@@ -95,7 +95,7 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Control service auto starts by default
 * [ ] Video service autostarts when configured to do so
 * [ ] Settings are saved between reboots
-* [ ] Remounting to RW works (disables overlay FS and remounts /root/firmeare as RW)
+* [ ] Remounting to RW works (disables overlay FS and remounts /root/firmware as RW)
 * [ ] Remounting to RO works (reverse from above)
 * [ ] Shows RO state on login via SSH
 * [ ] Shows connection info on login via SSH
@@ -105,10 +105,10 @@ Most issues should be caught by the extensive test suite, a manual check should 
 
 #### Relay Test Button in Viewer Menu
 
-* [x] Use the test button with an invalid session ID
-* [x] Use the test button with a valid session ID
-* [x] Use the test button with an invalid spectator ID
-* [x] Use the test button with a valid spectator ID
+* [ ] Use the test button with an invalid session ID
+* [ ] Use the test button with a valid session ID
+* [ ] Use the test button with an invalid spectator ID
+* [ ] Use the test button with a valid spectator ID
 
 #### UDP Detailed testing
 Verify with the stats dashboard if needed - make sure UDP is used on both ends.
@@ -122,7 +122,7 @@ Verify with the stats dashboard if needed - make sure UDP is used on both ends.
 * [ ] Establish session, stop Streamer, wait for the session to time out. Make sure session is picked up again when starting the streamer.
 * [ ] Make sure timeouts are updated while session is fully established
 * [ ] Make sure timeouts are updated when viewer is disconnected and viewer is removed from session
-* [ ] Make sure timeouts are update when streamer is disconnected and streamer is removed from session
+* [ ] Make sure timeouts are updated when streamer is disconnected and streamer is removed from session
 * [ ] Make sure timeouts are updated when streamer and viewer are disconnected and session is removed
 
 #### TCP Detailed testing
@@ -137,7 +137,7 @@ Verify with the stats dashboard if needed - make sure TCP is used on both ends.
 * [ ] Establish session, stop Streamer, wait for the session to time out. Make sure session is picked up again when starting the streamer.
 * [ ] Make sure timeouts are updated while session is fully established
 * [ ] Make sure timeouts are updated when viewer is disconnected and viewer is removed from session
-* [ ] Make sure timeouts are update when streamer is disconnected and streamer is removed from session
+* [ ] Make sure timeouts are updated when streamer is disconnected and streamer is removed from session
 * [ ] Make sure timeouts are updated when streamer and viewer are disconnected and session is removed
 
 #### Mixed Mode Detailed testing 1/3
@@ -152,7 +152,7 @@ Verify with the stats dashboard if needed - make sure TCP is used on the streame
 * [ ] Establish session, stop Streamer, wait for the session to time out. Make sure session is picked up again when starting the streamer.
 * [ ] Make sure timeouts are updated while session is fully established
 * [ ] Make sure timeouts are updated when viewer is disconnected and viewer is removed from session
-* [ ] Make sure timeouts are update when streamer is disconnected and streamer is removed from session
+* [ ] Make sure timeouts are updated when streamer is disconnected and streamer is removed from session
 * [ ] Make sure timeouts are updated when streamer and viewer are disconnected and session is removed
 
 #### Mixed Mode Detailed testing 2/3
@@ -167,7 +167,7 @@ Verify with the stats dashboard if needed - make sure UDP is used on the streame
 * [ ] Establish session, stop Streamer, wait for the session to time out. Make sure session is picked up again when starting the streamer.
 * [ ] Make sure timeouts are updated while session is fully established
 * [ ] Make sure timeouts are updated when viewer is disconnected and viewer is removed from session
-* [ ] Make sure timeouts are update when streamer is disconnected and streamer is removed from session
+* [ ] Make sure timeouts are updated when streamer is disconnected and streamer is removed from session
 * [ ] Make sure timeouts are updated when streamer and viewer are disconnected and session is removed
 
 #### Mixed Mode Detailed testing 3/3
@@ -203,7 +203,7 @@ When you reached this point, we can assume that the relay itself is working as i
 ##### Spectator
 
 * [ ] Make sure you can join a session via UDP
-* [ ] Make sure you can join session via TCP
+* [ ] Make sure you can join a session via TCP
 * [ ] Make sure you can switch between UDP and TCP
 * [ ] Make sure timeouts are updated while connected
 * [ ] Make sure spectator is removed when disconnected
@@ -211,6 +211,6 @@ When you reached this point, we can assume that the relay itself is working as i
 #### Discord bot
 
 * [ ] Requesting ID works (session ID & spectator id)
-* [ ] Reewing ID works (session ID & spectator id are both changed)
+* [ ] Renewing ID works (session ID & spectator id are both changed)
 * [ ] Stats are displayed
 * [ ] Stats are only displayed to users with `stats` role

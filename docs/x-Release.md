@@ -1,6 +1,6 @@
 > **NOTE:** X-Files are only relevant for developers/maintainers!
 
-Everything can be build via GitHub workflows, directly on the viewer/streamer or via chroot. Preferably we just use Github workflows to build everything, but quotas are in place and during development it might be easier and more efficient to build on the dev machines themselves.
+Everything can be built via GitHub workflows, directly on the viewer/streamer or via chroot. Preferably we just use GitHub workflows to build everything, but quotas are in place and during development it might be easier and more efficient to build on the dev machines themselves.
 
 ## Packages
 ### Chroot
@@ -61,9 +61,9 @@ Base image, deb packages for python and v3xctrl need to be in place. Also a dire
 
 > **NOTE**: the image builder script is meant to be run on the server, it uses chroot and qemu. Technically you can also run it on the client and then simply skip copying qemu static.
 
-## Github Workflows
+## GitHub Workflows
 ### Viewer
-This one is straight forward, new artifact are built on every push and PR.
+This one is straight forward, new artifacts are built on every push and PR.
 
 When creating a new release, just attach the latest builds to the release.
 

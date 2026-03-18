@@ -4,7 +4,7 @@ This document will help you set up your development environment for both the **S
 
 ## Reference Implementations
 
-For a quick start into the codebase, we have collected a couple of [reference implementations](https://github.com/stylesuxx/v3xctrl/issues?q=label%3A%22reference%22). Reviewing these commits commits will help you understand how to implement new features:
+For a quick start into the codebase, we have collected a couple of [reference implementations](https://github.com/stylesuxx/v3xctrl/issues?q=label%3A%22reference%22). Reviewing these commits will help you understand how to implement new features:
 
 * [Trigger an action from the WebUi](https://github.com/stylesuxx/v3xctrl/issues/34)
 * [Send a command from Viewer to streamer](https://github.com/stylesuxx/v3xctrl/pull/129)
@@ -13,7 +13,7 @@ For a quick start into the codebase, we have collected a couple of [reference im
 
 ## Viewer
 
-You can develop on any OS, though **Linux is the prefered option**. Make sure you have Python Version `>=3.11.4` installed.
+You can develop on any OS, though **Linux is the preferred option**. Make sure you have Python Version `>=3.11.4` installed.
 
 We recommend using `pyenv` for managing Python versions:
 
@@ -39,7 +39,7 @@ Install 3rd party libraries:
 
 * libcairo2
 
-On Debian (and derivates) run:
+On Debian (and derivatives) run:
 ```bash
 sudo apt install libcairo2
 ```
@@ -79,7 +79,7 @@ To activate the venv you have created you need to run the activate file that has
 The viewer is one of the more complex parts architecture wise and is split up into multiple folders for easier contextualization:
 
 * **core**: The core components "glue" together all the elements, telemetry context, general app state and the renderer all live here.
-* **menu**: Functionality related to the menu and it's tabs. If you want to add more settings, this is the place you should be looking in
+* **menu**: Functionality related to the menu and its tabs. If you want to add more settings, this is the place you should be looking in
 * **network**: Video receiver and control channel live here - this is by far the most complex part of the viewer. If you want to add an alternate video receiver, this would be the correct place.
 * **osd**: Functionality related to the on-screen-display, widgets and telemetry parsing functionality. If you want to add telemetry or change how OSD elements look, this is the correct folder.
 * **utils**: Shared functionality that is not easy to assign to any specific category above, small helper functions that are used here and there.

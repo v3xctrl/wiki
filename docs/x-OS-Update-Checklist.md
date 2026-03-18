@@ -1,4 +1,4 @@
-When updating to a new OS version, this Checklist should help to catch broken functionality:
+When updating to a new OS version, this checklist should help to catch broken functionality:
 
 ## Basic image functionality
 
@@ -8,7 +8,7 @@ When updating to a new OS version, this Checklist should help to catch broken fu
 * [ ] Custom image flashes with RPi Imager
 * [ ] Custom image boots
 * [ ] Serial console debugging output is present
-* [ ] Defaults set in RPi Imager are applied (hostname, Wifi, locale)
+* [ ] Defaults set in RPi Imager are applied (hostname, WiFi, locale)
 * [ ] Firstboot script runs without errors
 * [ ] Banner updates after firstboot ran
 * [ ] SD expands /data partition
@@ -25,7 +25,7 @@ When updating to a new OS version, this Checklist should help to catch broken fu
 * [ ] ENV is written on startup
 * [ ] Starts services
 * [ ] Webserver works
-* [ ] Wifi works
+* [ ] WiFi works
 * [ ] AP/client switch works
 * [ ] routing works properly
 * [ ] `v4l2-ctl` shows picam & controls

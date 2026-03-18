@@ -1,4 +1,4 @@
-This guide is meant to get you up and running as quick as possible. It is structured in such a way that you can set things up step by step, validating correct functionality in each step.
+This guide is meant to get you up and running as quickly as possible. It is structured in such a way that you can set things up step by step, validating correct functionality in each step.
 
 ## 1. RPi Setup
 
@@ -40,28 +40,28 @@ While keeping the viewer running, open the streamers web interface: `http://v3xc
 
 Now switch to the "_Services_" tab, find the `v3xctrl-control` service and click the "_Start_" button.
 
-On the viewer open the menu by pressing ++esc++, switch to the "_Streamer_" tab and click the "_Start Video_" button, click "_Back_" on the bottom right and after a couple of seconds you should see a Test image in the viewer.
+On the viewer open the menu by pressing ++esc++, switch to the "_Streamer_" tab and click the "_Start Video_" button, click "_Back_" on the bottom right and after a couple of seconds you should see a test image in the viewer.
 
 > Congratulations - you have established your first connection!
 
-In the web interface you can now set the control service to autostart on boot. Click the "_Config Editor_" tab, scroll down to "_Autostart_" and check "_control_". Scroll to the bottom and click "_Save_"
+In the web interface you can now set the control service to autostart on boot. Click the "_Config Editor_" tab, scroll down to "_Autostart_" and check "_control_". Scroll to the bottom and click "_Save_".
 
 !!! success "Validation"
-    * In the viewer the "Latency" and "Data" fields are changing
-    * The "No control signal" message has disappeared
+    * In the viewer the "_Latency_" and "_Data_" fields are changing
+    * The "_No control signal_" message has disappeared
     * A test image is visible in the viewer
 
 ## 4. Camera configuration
 
 !!! info "Prerequisites"
-    * A Raspberry Pi Zero 2W compatible camera
+    * A Raspberry Pi Zero 2 W compatible camera
     * Some cameras may need additional setup. You can check out the [Hardware](Hardware.md#cameras) section of the wiki for instructions.
 
-Shut down your streamer via web-interface and attach your Raspberry Pi Zero 2W compatible camera. Double check the polarity of the CIFS connector. Once attached, power it up and wait for the web-interface to be available.
+Shut down your streamer via web interface and attach your Raspberry Pi Zero 2 W compatible camera. Double-check the polarity of the CSI connector. Once attached, power it up and wait for the web interface to be available.
 
-With the viewer running, you will have an indication once the control service autostarts and connects to the viewer. Now open the web-interface, scroll down to the "_Video_" section and expand it. Scroll down to the "_Test image_" checkbox and uncheck it. Scroll to the bottom and click "Save".
+With the viewer running, you will have an indication once the control service autostarts and connects to the viewer. Now open the web interface, scroll down to the "_Video_" section and expand it. Scroll down to the "_Test image_" checkbox and uncheck it. Scroll to the bottom and click "_Save_".
 
-On the viewer, open the menu by pressing ++esc++, switch to the "_Streamer_" tab and click the "Start Video" button, click "_Back_" on the bottom right and after a couple of seconds you should see the camera image in the viewer.
+On the viewer, open the menu by pressing ++esc++, switch to the "_Streamer_" tab and click the "_Start Video_" button, click "_Back_" on the bottom right and after a couple of seconds you should see the camera image in the viewer.
 
 !!! success "Validation"
     The camera image is visible in the viewer instead of the test image.
@@ -93,9 +93,9 @@ If the servo is moving in the wrong direction, go to the "_Controls_" section, e
 ### 5.b Power supply
 
 !!! info "Prerequisites"
-    * 5V power supply, preferably a high quality 5V buck converter powered from a Lipo battery
+    * 5V power supply, preferably a high-quality 5V buck converter powered from a Lipo battery
 
-Before connecting the 5V power supply, make sure the Raspberry Pi is no longer powered via power brick. Connect the 5V power supply to `5V` and `GND`. Double check polarization.
+Before connecting the 5V power supply, make sure the Raspberry Pi is no longer powered via power brick. Connect the 5V power supply to `5V` and `GND`. Double-check polarity.
 
 !!! success "Validation"
     The streamer boots from your power source and the web interface is accessible.
@@ -120,7 +120,7 @@ Voltage sensor is not mandatory, but highly recommended if you want to get the m
 
 Now that everything has been tested on the local network, the last step is to add the modem. Follow the steps in the [SIM card documentation](SIM.md) to prepare your SIM card. Insert the SIM card into your modem and attach the modem to the streamer.
 
-Boot up the streamer, use the web-interface `http://v3xctrl.local` and go to the "_Modem_" tab.
+Boot up the streamer, use the web interface `http://v3xctrl.local` and go to the "_Modem_" tab.
 
 > For the "_Modem_" tab to show details, you have to make sure that the control service is not running, you can stop it from the "_Services_" tab
 
@@ -132,7 +132,7 @@ Confirm the following details:
 
 If those above points are true, then you are ready to stream over your mobile network.
 
-Go to the "_Config Editor_" tab, in the Server section enter the **external IP address** of your viewer (you can use [whatismyipaddress.com](https://whatismyipaddress.com/) to find it, if you don't know it), scroll down to "_Network_", expand scroll to "_routing_" and select "_RNDIS_". Further down in the Modem section, select the "_Model_" of your modem. Scroll to the bottom and click "_Save_".
+Go to the "_Config Editor_" tab, in the Server section enter the **external IP address** of your viewer (you can use [whatismyipaddress.com](https://whatismyipaddress.com/) to find it, if you don't know it), scroll down to "_Network_", expand, scroll to "_routing_" and select "_RNDIS_". Further down in the Modem section, select the "_Model_" of your modem. Scroll to the bottom and click "_Save_".
 
 > After changing routing type you will have to restart the streamer.
 
@@ -142,7 +142,7 @@ Go to the "_Config Editor_" tab, in the Server section enter the **external IP a
 
 ## 7. Next steps
 
-Congratulations, now that the base setup is completed, there is a couple things you can do next:
+Congratulations, now that the base setup is completed, there are a couple of things you can do next:
 
 * [Calibration](Calibration.md)
 * [Controller Setup](Controller-Setup.md)

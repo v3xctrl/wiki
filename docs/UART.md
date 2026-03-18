@@ -1,4 +1,4 @@
-The raspberry Pi Zero 2 W has unfortunately only one UART broken out.
+The Raspberry Pi Zero 2 W has unfortunately only one UART broken out.
 
 During firstboot, the UART is used for serial console in order to make it easier to debug. Once set up, the serial console is disabled in order to free the UART up for peripherals like GPS modules.
 

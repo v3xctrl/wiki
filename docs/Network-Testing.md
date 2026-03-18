@@ -36,7 +36,7 @@ This will saturate your connection and show the actual maximum throughput. Look 
 
 This test tells us that we had an average bitrate of 3.99Mbps for a duration of 60 seconds. This test makes me confident enough to choose the 3.0Mbps setting (realistic maximum for 4G, Cat-1)
 
-> **NOTE:** We are testing up to 100Mbps, but since the video encoder uses h264 encoding level 4.1 which caps out at 50Mbps we would not be able to use the max bandwith anyway.
+> **NOTE:** We are testing up to 100Mbps, but since the video encoder uses h264 encoding level 4.1 which caps out at 50Mbps we would not be able to use the max bandwidth anyway.
 
 #### Constant bitrate jitter and reliability test
 
@@ -130,8 +130,8 @@ When looking at the values, the weight is as follows, from most important to lea
 These metrics should be used when evaluating carriers, modems and antennas. Keep in mind that those tests need to be run under the same conditions to be comparable. Streamer needs to be in the same position, and server has to be the same one. So basically keep everything the same apart from the one thing you are trying to compare.
 
 ### Considerations
-* The above test is only running for 60 seconds, consider it running for a longer time-frame to catch thermal throttling, congestion patterns or periodic interference.
-* Run a couple tests and average result.
+* The above test is only running for 60 seconds, consider running it for a longer time-frame to catch thermal throttling, congestion patterns or periodic interference.
+* Run a couple of tests and average the results.
 * Match the test bitrate to your target stream bitrate for results closest to reality
 * the `-l` parameter is payload size, match this to your MTU value in the `gstreamer` transmitter
 * Data usage - Just because you _can_ go with a higher bandwidth, doesn't mean you _should_. Also consider your data limits.
@@ -149,7 +149,7 @@ Unfortunately routing is not something you can change, but it can help you with 
 Generally speaking you are looking for the least loss and lowest jitter. Less than 1% loss is ideal for video streaming, 1-5% is acceptable with modern codecs, and anything above 5% will likely cause visible problems.
 
 ## UDP Hole Duration
-Without going into too much details, mobile devices usually are assigned an local (to the carrier) IP address, so they will not have their dedicated IP address. This makes it difficult to directly access a device behind a mobile carrier NAT. An easy way is to allow the mobile device to "punch a hole" through the carrier NAT, establishing an open channel to a different peer. While this hole is open, the two peers can communicat freely through the port they established the connection through. This hole is kept open as long as traffic flows. It is important to know how long this hole will be open, so that heartbeats can be sent in order to keep the hole open.
+Without going into too much details, mobile devices usually are assigned a local (to the carrier) IP address, so they will not have their dedicated IP address. This makes it difficult to directly access a device behind a mobile carrier NAT. An easy way is to allow the mobile device to "punch a hole" through the carrier NAT, establishing an open channel to a different peer. While this hole is open, the two peers can communicate freely through the port they established the connection through. This hole is kept open as long as traffic flows. It is important to know how long this hole will be open, so that heartbeats can be sent in order to keep the hole open.
 
 In order to test this, there are two scripts in place, you need to first run the server script on the viewer from the `src` directory:
 

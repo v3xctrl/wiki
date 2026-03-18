@@ -12,7 +12,7 @@ Here you can change the default ports for the web interface and the services. Yo
 > Generally, this section can be left alone.
 
 #### WiFi
-WiFi can either be run in client or in AP mode. In client mode it will try to connect to the network configured when you initially flashed the image. In AP mode, it will spawn it's own WiFi network to which you can connect to.
+WiFi can either be run in client or in AP mode. In client mode it will try to connect to the network configured when you initially flashed the image. In AP mode, it will spawn its own WiFi network to which you can connect.
 
 The default AP network is `v3xctrl-<device_id>`.
 The default password is `raspberry`.
@@ -36,8 +36,8 @@ Allows you to calibrate steering and throttle.
 Shows the kernel logs of the current session, very important for debugging.
 
 ## Modem
-Shows information about the modem. This will help you the most to debug conectivity issues:
+Shows information about the modem. This will help you the most to debug connectivity issues:
 
-If **SIM Status** is anything else then "OK", your SIM is either not inserted, not recognized or the PIN is not disabled.
+If **SIM Status** is anything else than "OK", your SIM is either not inserted, not recognized or the PIN is not disabled.
 
 **Allowed Bands** shows the currently configured allowed bands, make sure that you can see some of the bands here that your carrier uses (check with [cellmapper](https://cellmapper.net)).

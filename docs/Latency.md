@@ -31,8 +31,8 @@ There are multiple stages where latency is introduced, and only some of them are
 ------------
 ```
 
-On the streamer it can take 51.5-116ms from the light hitting then lens until the frame leaves the streamer onto the network.
-On the viewer it can take from 2-52.ms until the frame is ready to be displayed.
+On the streamer it can take 51.5-116ms from the light hitting the lens until the frame leaves the streamer onto the network.
+On the viewer it can take from 2-52 ms until the frame is ready to be displayed.
 On the display it can take an additional 8-30ms 
 
 From capturing a frame to displaying it on-screen, the average latency is roughly **65–190 ms**, with typical values around **180–210 ms** depending on network conditions.
@@ -90,7 +90,7 @@ In the recording, pick a frame and calculate the difference between the time in 
 
 * On the bottom right, we can see the reference time: **17:54:09.674**
 * In the center we see the measured time: **17:54:09.545**
-* The difference is the latency, we only need to look at the miliseconds. In our example that is **129ms**.
+* The difference is the latency, we only need to look at the milliseconds. In our example that is **129ms**.
 
 In the streamer and viewer logs you can find a breakdown of latency for the things we can measure in software.
 
@@ -111,7 +111,7 @@ measured - network - streamer - viewer = unaccounted
 129 - 4 - 44.5 - 18.6 = 61.9ms
 ```
 
-Our **unaccounted latency is 61.9ms**. This has to be latency from things we can not measure in software:
+Our **unaccounted latency is 61.9ms**. This has to be latency from things we cannot measure in software:
 
 **Pre-capture (streamer side):**
 
@@ -142,7 +142,7 @@ As you can see from above, latency has a LOT of variables, when testing, we want
 * Viewer: Clock enabled, debug widget enabled
 * RPi Cam v3
 
-> **NOTE:** if anything deviates from this defaults, it is mentioned so in the following tests. 
+> **NOTE:** if anything deviates from these defaults, it is mentioned so in the following tests. 
 
 ## Ethernet
 In this test we use an USB-C Ethernet adapter to exclude as much network latency as possible. We use the above described method to measure latency, we will pick min and max latency measurements from the recording and calculate the average.
@@ -175,7 +175,7 @@ Now this will depend on provider, location, band and reception. This is measured
 > **NOTE:** When testing settings on the streamer and watching the logs, it is important to compare a consistent image, for this it makes sense to put something over the camera to have a black image. This obviously simulates a "best case" for the pipeline since the image is not changing at all, a "worst case" for the camera since it needs the longest exposure time, but also allows for easy comparisons.
 
 ### Force wide FOV / HDR enable
-Using either of thos options will increase the FOV significantly, but will also increase the time consumed to fetch the image from the camera - this option adds 15ms - 20ms of latency.
+Using either of those options will increase the FOV significantly, but will also increase the time consumed to fetch the image from the camera - this option adds 15ms - 20ms of latency.
 
 ### Change encoder profile
 Changing the encoder profile from "High" to "Constrained Baseline" saves about 5ms during the encoding step.

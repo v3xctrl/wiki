@@ -1,7 +1,7 @@
 We provide multiple options for the viewer
 
 ## Desktop
-We offer stand alone apps for Windows and Linux, you can download them from the [releases](https://github.com/stylesuxx/v3xctrl/releases).
+We offer standalone apps for Windows and Linux, you can download them from the [releases](https://github.com/stylesuxx/v3xctrl/releases).
 
 ### Usage
 Press ++esc++ at any time to toggle the menu.
@@ -34,6 +34,6 @@ You can manually edit settings.toml to access additional options. Here you can f
 After manual edits, **restart the GUI** to apply changes.
 
 ## Mobile
-We also offer an APK for android - it is currently not available through Google Play, but you can download it from the [releases](https://github.com/stylesuxx/v3xctrl/releases).
+We also offer an APK for Android - it is currently not available through Google Play, but you can download it from the [releases](https://github.com/stylesuxx/v3xctrl/releases).
 
-The Android viewer does only support connection via the Relay, so you will need a valid session ID, you can obtain one by joining our [Discord](https://dsc.gg/v3xctrl).
+The Android viewer only supports connection via the Relay, so you will need a valid session ID. You can obtain one by joining our [Discord](https://dsc.gg/v3xctrl).
