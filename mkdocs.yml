@@ -73,10 +73,10 @@ nav:
     - SIM: SIM.md
     - Antennas: Antennas.md
     - UART: UART.md
+    - Defaults: Defaults.md
   - Viewer:
     - Viewer: Viewer.md
     - Input Devices: Input-devices.md
-    - Controller Setup: Controller-Setup.md
     - Video Receiver Backends: Video-Receiver-Backends.md
   - Networking:
     - Connection Types: Connection-Types.md

@@ -18,27 +18,9 @@ UDP in the context of 4G networks has a couple downsides:
 
 ## Bandwidth Constraints
 
-4G networks have multiple categories.
+4G networks have limited uplink bandwidth, especially Cat 1 modems which are limited to about 5 Mbps uplink. Data usage depends on resolution and encoder settings. See [Network Testing](Network-Testing.md) for how to measure and evaluate your connection.
 
-* **Cat 1 LTE** typically achieves 3–4 Mbps uplink in practice.
-* Cat 4 supports up to 50 Mbps theoretical uplink, but real-world speeds are typically below 20 Mbps.
-
-Reception quality matters a lot - bad signal can drop bandwidth drastically. Optimally, you should use the highest category modem available.
-
-Also consider data limits:
-
-* A 1080p 30fps stream with I-frames every 2 seconds can easily use ~8 Mbps, or 3.6 GB/hour.
-* A 720p 30fps stream reduces this to around 5 Mbps, or 2.25 GB/hour.
-
-> Data usage is approximate and depends heavily on scene complexity and encoder settings.
-
-### Recommended Self-Tests
-
-The system can perform basic tests to suggest optimal settings:
-
-* **Bandwidth test:** Upload a 10 MB test file to the viewer to measure available uplink speed and set resolution/bitrate accordingly.
-* **UDP RTT:** Measure round-trip latency to check responsiveness.
-* **UDP hole duration:** Measure how long NAT mappings stay open. Anything over 1 second is sufficient since telemetry is sent at least once per second, and control packets are typically sent every few milliseconds.
+The system includes built-in self-tests for bandwidth, UDP round-trip time, and NAT hole duration. See [Network Testing](Network-Testing.md) for details.
 
 ## Packaging
 
@@ -56,32 +38,7 @@ We do not want to limit what users can do with this platform.
 
 ## Client Hardware
 
-Multiple hardware platforms could act as the streamer, but we chose the Raspberry Pi Zero 2 W because it provides:
-
-* Small size, lightweight, widely available
-* Hardware H.264 video encoder
-* Dedicated camera interface (CSI)
-* USB and Wi-Fi support
-* 2x hardware PWM channels (500 MHz clock, controllable via pigpio)
-* GPIO for sensors and actuators
-
-It can encode **1080p@30fps video in real-time** without issues, assuming sufficient modem upload speed. Lower resolutions are easily supported.
-
-Peripheral considerations:
-
-**Sensors:**
-* INAxxx for measuring battery voltage
-* GPS (?)
-
-**Actuators:**
-* PWM-based speed controller (preferably with BEC to power servos)
-* PWM servos
-
-**Power supply:**
-* Stable 5 V @ 3 A step-down converter
-
-**Modem:**
-* Any 4G modem exposing an **RNDIS device**, higher category preferred.
+We chose the Raspberry Pi Zero 2 W as the streamer platform for its combination of small size, hardware H.264 encoding, CSI camera interface, and GPIO support. See the [Hardware page](Hardware.md) for full details on compatible hardware and peripherals, and the [Pinout page](Pinout.md) for wiring.
 
 ## Software
 

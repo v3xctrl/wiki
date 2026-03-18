@@ -145,5 +145,5 @@ Go to the "_Config Editor_" tab, in the Server section enter the **external IP a
 Congratulations, now that the base setup is completed, there are a couple of things you can do next:
 
 * [Calibration](Calibration.md)
-* [Controller Setup](Controller-Setup.md)
+* [Input Devices & Controller Setup](Input-devices.md)
 * Tune image settings

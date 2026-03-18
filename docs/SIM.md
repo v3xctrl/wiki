@@ -8,6 +8,8 @@ Insert your SIM card in a phone, make sure it registers with the network and tha
 
 In the security settings, disable the PIN. Reboot your phone, make sure it does not ask for the PIN anymore and that you still register with the network and connect to the internet.
 
+> See also: [Troubleshooting - Modem](Troubleshooting.md#modem) for further SIM debugging tips.
+
 ## 3. Test in Modem
 Insert your SIM card in the modem and start the streamer.
 
@@ -17,62 +19,8 @@ Insert your SIM card in the modem and start the streamer.
 TODO
 
 ### CLI
-From the CLI connect to the modem:
 
-```bash
-minicom -D /dev/ttyACM0 -b 115200
-```
-
-#### Check that the modem is available
-```bash
-AT
-
-# Result
-AT
-```
-
-#### Check that SIM is recognized and PIN is disabled
-```bash
-AT+CPIN?
-
-# SUCCESS
-+CPIN: READY
-
-# FAIL - SIM not recognized
-+CME ERROR: 10
-```
-
-#### Check that the SIM is registered with the carrier
-
-```bash
-AT+COPS?
-
-# SUCCESS
-+COPS: 0,2,"23201",7
-```
-
-On success you should always see a 7 at the end, indicating that the access technology is LTE.
-
-`23201` is the carrier code. First three numbers are country code, last two carrier code - in our case `232` is Austria and `01` is A1.
-
-#### Check context and IP assignment
-
-```bash
-AT+CGDCONT?
-
-# SUCCESS IPv4 AND v6 (1)
-+CGDCONT: 1,"IPV4V6","ctnet","IPV4:10.0.28.161    IPV62001:4BB8:02CC:18F7:0000:0000:E33A:AA8E",,,,0,,,,,,1,,
-
-# SUCCESS IPv4 (2)
-+CGDCONT: 1,"IP","magenta","10.145.10.20",,,,,,,,,,,,
-
-# FAIL
-```
-
-In case (1) we have an IPV4V6 context. Also we are using the ctnet APN - for Chinese Telekom. But we are not registered to this carrier - still we get an IP address and internet is working. This means that most likely the provider ignores the wrong APN and rewrites to the default APN on the backend.
-
-When checking the public IP address, it turns out, that it in fact belongs to A1.
-
+For CLI-based debugging with AT commands (checking modem availability, SIM status, carrier registration, and IP context), see the [Modem debugging guide](Modems.md#debugging).
 
 ##### Setting APN
 We want to prefer IPv4 and in cases where no APN is assigned, we can do so ourselves. A valid APN might not be necessary and the provider might ignore it, but it is a good idea to use the official one.

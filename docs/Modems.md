@@ -12,7 +12,7 @@ It comes in **four distinct versions**, usually labeled on top of the MCU:
 | CAT1-EU  | 1, 3, 7, 8, 20, 28 | No  | 10Mbps down, 5Mbps up |
 | CAT1-EA  | 1, 3, 5, 7, 8, 28 | No  | 10Mbps down, 5Mbps up |
 
-> **TIP:** Check which LTE bands are used by your carrier in your area on [cellmapper.net](https://www.cellmapper.net/map) before purchasing a modem.
+> **TIP:** Check which LTE bands are used by your carrier in your area on [cellmapper.net](https://www.cellmapper.net/map) before purchasing a modem. See [Antennas](Antennas.md) for a detailed guide on evaluating bands in your region.
 
 
 ### Enabling All Factory-Supported Bands
@@ -25,8 +25,7 @@ Example for CAT1-GPS:
 
 ### Debugging
 
-> Before attempting any debugging, make sure your SIM card is active and working. Insert it into a phone first, **disable the PIN code** if necessary, and verify that you can connect to the internet.
-In some regions, you may need to complete an activation process before the SIM can register on the network.
+> Before attempting any debugging, make sure your SIM card is set up correctly. See [SIM card preparation](SIM.md) and the [Troubleshooting modem section](Troubleshooting.md#modem) for common issues.
 
 Connect to the modem using `minicom`:
 

@@ -79,6 +79,8 @@ When WiFi is configured to operate in Access Point mode, or no host network is f
 
 The password is: **raspberry**
 
+> See [Defaults](Defaults.md) for all default credentials and ports.
+
 ## Services
 
 After installation there will be a few services available, some of them enabled by default. `systemd` is used for service management and all the services can be controlled by it:

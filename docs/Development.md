@@ -88,21 +88,9 @@ The viewer is one of the more complex parts architecture wise and is split up in
 
 > For development, it’s strongly recommended to use the provided custom PiOS image as a starting point.
 
-### Setup
+### Read-Write Mode
 
-By default the `/root` and `/` partitions are mounted **read-only**. To build or install on the Streamer, you need to temporarily switch to **read-write** mode:
-
-```bash
-sudo v3xctrl-remount rw
-```
-
-This change is persistent until you switch back to read-only mode and requires a `reboot` to take effect.
-
-When you’re done, don’t forget to revert to read-only mode:
-
-```bash
-sudo v3xctrl-remount ro
-```
+By default the `/root` and `/` partitions are mounted **read-only**. To build or install on the streamer, you need to switch to read-write mode first. See [How can I enable RW mode?](FAQ.md#how-can-i-enable-rw-mode) for instructions.
 
 ### Building
 You can build the `.deb` package in two ways:

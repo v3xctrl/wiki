@@ -17,10 +17,12 @@ WiFi can either be run in client or in AP mode. In client mode it will try to co
 The default AP network is `v3xctrl-<device_id>`.
 The default password is `raspberry`.
 
+> See [Defaults](Defaults.md) for all default credentials and ports.
+
 I suggest to keep the device in client mode as long as you are setting it up and then switch it to AP mode when you are done. This will allow you to connect to the device on the field via your phone.
 
 #### Modem
-The most important section here are the Bands. You might need to adjust the bands for your region. Best use cellmapper to find out which bands are available in your region for your provider.
+The most important section here are the Bands. You might need to adjust the bands for your region. Best use cellmapper to find out which bands are available in your region for your provider. See the [Antennas page](Antennas.md) for a detailed guide.
 
 > We also noted that the modem seems to prefer the higher frequency, higher throughput bands, which might not be the best choice in rural regions. We found out, that pinning the modem to a single band might yield WAY better results. In rural regions with not so great coverage that would be the lower frequency bands (Band 20 in the EU for example).
 
