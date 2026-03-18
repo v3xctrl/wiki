@@ -6,28 +6,29 @@ Connect your peripherals according to the following pinout:
 </td>
 <td>
 
-|Func.|Pin|Pin|Func.|
-|-----|---|---|----|
-| 3.3V | 1 | 2 | 5V |
-| SDA (I2C) | 3 | 4 | **5V** |
-| SCL (I2C) | 5 | 6 | **GND** |
-| --- | 7 | 8 | TX (UART0) |
-| --- | 9 | 10 | RX (UART0) |
-| --- | 11 | 12 | **PWM1** |
-| --- | 13 | 14 | GND |
-| --- | 15 | 16 | --- |
-| --- | 17 | 18 | --- |
-| --- | 19 | 20 | GND |
-| --- | 21 | 22 | --- |
-| --- | 23 | 24 | --- |
-| GND | 25 | 26 | --- |
-| --- | 27 | 28 | --- |
-| LED0* | 29 | 30 | GND |
-| LED1* | 31 | 32 | PWM1.1* |
-| **PWM2** | 33 | 34 | GND |
-| PWM2.1* | 35 | 36 | LED2* |
-| IO26* | 37 | 38 | --- |
-| GND | 39 | 40 | IO21* |
+<table>
+<tr><th>Func.</th><th>Pin</th><th>Pin</th><th>Func.</th></tr>
+<tr><td>3.3V</td><td>1</td><td>2</td><td>5V</td></tr>
+<tr><td>SDA (I2C)</td><td>3</td><td>4</td><td><b>5V</b></td></tr>
+<tr><td>SCL (I2C)</td><td>5</td><td>6</td><td><b>GND</b></td></tr>
+<tr><td>---</td><td>7</td><td>8</td><td>TX (UART0)</td></tr>
+<tr><td>---</td><td>9</td><td>10</td><td>RX (UART0)</td></tr>
+<tr><td>---</td><td>11</td><td>12</td><td><b>PWM1</b></td></tr>
+<tr><td>---</td><td>13</td><td>14</td><td>GND</td></tr>
+<tr><td>---</td><td>15</td><td>16</td><td>---</td></tr>
+<tr><td>---</td><td>17</td><td>18</td><td>---</td></tr>
+<tr><td>---</td><td>19</td><td>20</td><td>GND</td></tr>
+<tr><td>---</td><td>21</td><td>22</td><td>---</td></tr>
+<tr><td>---</td><td>23</td><td>24</td><td>---</td></tr>
+<tr><td>GND</td><td>25</td><td>26</td><td>---</td></tr>
+<tr><td>---</td><td>27</td><td>28</td><td>---</td></tr>
+<tr><td>LED0*</td><td>29</td><td>30</td><td>GND</td></tr>
+<tr><td>LED1*</td><td>31</td><td>32</td><td>PWM1.1*</td></tr>
+<tr><td><b>PWM2</b></td><td>33</td><td>34</td><td>GND</td></tr>
+<tr><td>PWM2.1*</td><td>35</td><td>36</td><td>LED2*</td></tr>
+<tr><td>IO26*</td><td>37</td><td>38</td><td>---</td></tr>
+<tr><td>GND</td><td>39</td><td>40</td><td>IO21*</td></tr>
+</table>
 
 </td>
 </tr>
