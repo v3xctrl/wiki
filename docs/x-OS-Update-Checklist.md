@@ -1,6 +1,7 @@
 When updating to a new OS version, this Checklist should help to catch broken functionality:
 
 ## Basic image functionality
+
 * [ ] Boots with modem (best test without any customization applied)
 * [ ] Packages build
 * [ ] Custom image builds
@@ -20,6 +21,7 @@ When updating to a new OS version, this Checklist should help to catch broken fu
 * [ ] OverlayFS is active after firstboot
 
 ## Functionality provided by v3xctrl.deb
+
 * [ ] ENV is written on startup
 * [ ] Starts services
 * [ ] Webserver works

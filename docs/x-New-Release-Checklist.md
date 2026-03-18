@@ -1,4 +1,5 @@
 ## Quick function check
+
 * [ ] Viewer starts
 * [ ] Streamer starts
 * [ ] Direct connection is working
@@ -7,9 +8,12 @@
 ## In depth check
 Most issues should be caught by the extensive test suite, a manual check should still be performed, especially before major releases.
 
-### Viewer (Desktop)
+### Viewer
 
-#### Menu
+#### Desktop
+
+##### Menu
+
 * [ ] Can open menu
 * [ ] Can switch tabs
 * [ ] Can close menu (via [ESC] and back button)
@@ -35,7 +39,8 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Streamer: Can start/stop recording via button on gamepad
 * [ ] Quit button stops the viewer
 
-#### Main screen
+##### Main screen
+
 * [ ] Displays direct connection settings
 * [ ] Keyboard inputs detected
 * [ ] Gamepad inputs detected
@@ -54,10 +59,12 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Trimming with hotkeys works
 * [ ] Toggling recording works with hotkey
 
-#### Edge Cases
+##### Edge Cases
+
 * [ ] Reboot streamer while viewer is running, make sure viewer will re-connect
 
-### Viewer (Android)
+#### Android
+
 * [ ] Can open app
 * [ ] Shows warning without session ID
 * [ ] Connects with valid session ID
@@ -97,6 +104,7 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * Make sure, viewer, streamer and spectator all connect from the same IP.
 
 #### Relay Test Button in Viewer Menu
+
 * [x] Use the test button with an invalid session ID
 * [x] Use the test button with a valid session ID
 * [x] Use the test button with an invalid spectator ID
@@ -119,6 +127,7 @@ Verify with the stats dashboard if needed - make sure UDP is used on both ends.
 
 #### TCP Detailed testing
 Verify with the stats dashboard if needed - make sure TCP is used on both ends.
+
 * [ ] Establish session, make sure the timeouts keep getting updated while both peers are connected
 * [ ] Establish session, restart viewer, make sure session is picked up again.
 * [ ] Establish session, restart streamer, make sure session is picked up again.
@@ -133,6 +142,7 @@ Verify with the stats dashboard if needed - make sure TCP is used on both ends.
 
 #### Mixed Mode Detailed testing 1/3
 Verify with the stats dashboard if needed - make sure TCP is used on the streamer, UDP on the viewer.
+
 * [ ] Establish session, make sure the timeouts keep getting updated while both peers are connected
 * [ ] Establish session, restart viewer, make sure session is picked up again.
 * [ ] Establish session, restart streamer, make sure session is picked up again.
@@ -147,6 +157,7 @@ Verify with the stats dashboard if needed - make sure TCP is used on the streame
 
 #### Mixed Mode Detailed testing 2/3
 Verify with the stats dashboard if needed - make sure UDP is used on the streamer, TCP on the viewer.
+
 * [ ] Establish session, make sure the timeouts keep getting updated while both peers are connected
 * [ ] Establish session, restart viewer, make sure session is picked up again.
 * [ ] Establish session, restart streamer, make sure session is picked up again.
@@ -160,6 +171,7 @@ Verify with the stats dashboard if needed - make sure UDP is used on the streame
 * [ ] Make sure timeouts are updated when streamer and viewer are disconnected and session is removed
 
 #### Mixed Mode Detailed testing 3/3
+
 * [ ] Make sure that switching protocol on the viewer will allow the viewer to reconnect
 * [ ] Make sure that switching protocol on the streamer will allow the streamer to reconnect
 
@@ -183,11 +195,13 @@ Make sure the session is established before attempting to connect.
 When you reached this point, we can assume that the relay itself is working as it is expected to. This will validate that the android viewer matches the functionality of the Desktop Viewer.
 
 ##### Viewer
+
 * [ ] Make sure you can establish a new session via UDP
 * [ ] Make sure you can establish a new session via TCP
 * [ ] Make sure you can switch between UDP and TCP
 
 ##### Spectator
+
 * [ ] Make sure you can join a session via UDP
 * [ ] Make sure you can join session via TCP
 * [ ] Make sure you can switch between UDP and TCP
@@ -195,6 +209,7 @@ When you reached this point, we can assume that the relay itself is working as i
 * [ ] Make sure spectator is removed when disconnected
 
 #### Discord bot
+
 * [ ] Requesting ID works (session ID & spectator id)
 * [ ] Reewing ID works (session ID & spectator id are both changed)
 * [ ] Stats are displayed
