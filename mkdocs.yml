@@ -1,7 +1,7 @@
 site_name: v3xctrl Wiki
 site_url: https://v3xctrl.github.io/
-repo_url: https://github.com/v3xctrl/v3xctrl-wiki
-repo_name: v3xctrl/v3xctrl-wiki
+repo_url: https://github.com/v3xctrl/wiki
+repo_name: v3xctrl/wiki
 edit_uri: edit/master/docs/
 
 theme:
@@ -53,24 +53,22 @@ nav:
     - Shopping List: Shopping-List.md
     - Terminology: Terminology.md
     - Motivation: Motivation.md
-  - Hardware:
+  - Streamer:
+    - Streamer: Streamer.md
+    - Web Interface: Web-Interface.md
     - Pinout: Pinout.md
     - Compatible Hardware: Hardware.md
     - Modems: Modems.md
     - SIM: SIM.md
     - Antennas: Antennas.md
-  - Setup:
-    - Controller Setup: Controller-Setup.md
-    - Input Devices: Input-devices.md
     - Calibration: Calibration.md
     - UART: UART.md
-  - Streamer:
-    - Streamer: Streamer.md
-    - Web Interface: Web-Interface.md
     - Tuning Encoder Settings: Tuning-encoder-settings.md
   - Viewer:
     - Viewer: Viewer.md
     - Video Receiver Backends: Video-Receiver-Backends.md
+    - Controller Setup: Controller-Setup.md
+    - Input Devices: Input-devices.md
   - Networking:
     - Connection Types: Connection-Types.md
     - Network Testing: Network-Testing.md
