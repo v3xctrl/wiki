@@ -1,7 +1,8 @@
 site_name: v3xctrl Wiki
 site_url: https://v3xctrl.github.io/
-repo_url: https://github.com/stylesuxx/v3xctrl
-repo_name: stylesuxx/v3xctrl
+repo_url: https://github.com/v3xctrl/v3xctrl-wiki
+repo_name: v3xctrl/v3xctrl-wiki
+edit_uri: edit/master/docs/
 
 theme:
   name: material
@@ -28,6 +29,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.action.edit
 
 plugins:
   - search
@@ -46,35 +48,35 @@ markdown_extensions:
   - tables
 
 nav:
-  - Home: index.md
   - Getting Started:
-    - Quickstart: Quickstart.md
+    - Quickstart: index.md
     - Shopping List: Shopping-List.md
     - Terminology: Terminology.md
     - Motivation: Motivation.md
   - Hardware:
-    - Compatible Hardware: Hardware.md
     - Pinout: Pinout.md
-    - Antennas: Antennas.md
+    - Compatible Hardware: Hardware.md
     - Modems: Modems.md
     - SIM: SIM.md
+    - Antennas: Antennas.md
   - Setup:
     - Controller Setup: Controller-Setup.md
+    - Input Devices: Input-devices.md
+    - Calibration: Calibration.md
+    - UART: UART.md
+  - Streamer:
     - Streamer: Streamer.md
     - Web Interface: Web-Interface.md
-    - Calibration: Calibration.md
-    - Input Devices: Input-devices.md
-    - UART: UART.md
-  - Networking:
-    - Connection Types: Connection-Types.md
-    - Carriers: Carriers.md
-    - Network Testing: Network-Testing.md
-    - Latency: Latency.md
-    - Control Channel: Control-Channel.md
+    - Tuning Encoder Settings: Tuning-encoder-settings.md
   - Viewer:
     - Viewer: Viewer.md
     - Video Receiver Backends: Video-Receiver-Backends.md
-    - Tuning Encoder Settings: Tuning-encoder-settings.md
+  - Networking:
+    - Connection Types: Connection-Types.md
+    - Network Testing: Network-Testing.md
+    - Latency: Latency.md
+    - Control Channel: Control-Channel.md
+    - Carriers: Carriers.md
   - Troubleshooting:
     - Troubleshooting: Troubleshooting.md
     - FAQ: FAQ.md
