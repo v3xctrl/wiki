@@ -49,9 +49,9 @@ nav:
   - Home: index.md
   - Getting Started:
     - Quickstart: Quickstart.md
+    - Shopping List: Shopping-List.md
     - Terminology: Terminology.md
     - Motivation: Motivation.md
-    - Shopping List: Shopping-List.md
   - Hardware:
     - Compatible Hardware: Hardware.md
     - Pinout: Pinout.md
