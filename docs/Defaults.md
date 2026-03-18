@@ -18,12 +18,6 @@ When the streamer cannot connect to a configured WiFi network (or none is config
 | URL (client mode) | `http://v3xctrl.local` |
 | URL (AP mode) | `http://192.168.23.1` |
 
-## Video
-
-| Setting | Value |
-|---------|-------|
-| Video port | `16384` (UDP) |
-
 ## Samba Share
 
 The recordings directory is shared via Samba (disabled by default, enable in Extras config).
