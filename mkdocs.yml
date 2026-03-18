@@ -33,6 +33,9 @@ theme:
     - content.code.copy
     - content.action.edit
 
+hooks:
+  - hooks/edit_url.py
+
 plugins:
   - search
 
