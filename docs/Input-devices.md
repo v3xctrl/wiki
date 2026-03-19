@@ -31,3 +31,5 @@ This list is not exhaustive, just a couple of input devices we have tested ourse
 
 * **GuliKit KK3**: Analog thumbstick, two analog shoulder buttons for throttle forward/reverse
 * **PXN V3 Pro Gaming Wheel**: Analog wheel for steering, analog pedals for throttle/reverse
+* **Radiomaster MT16: Analog wheel for steering, analog pedals for throttle/reverse
+* **XBOX Controller**: Analog thumbstick, two analog shoulder buttons for throttle forward/reverse
