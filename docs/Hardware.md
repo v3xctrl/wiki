@@ -1,4 +1,4 @@
-This is a list of tested and recommended Hardware. **Recommended** means it has been tested by the developers and works well (presumably out of the box). This is not a complete list of all compatible Hardware, but if you run into issues, consider using something that has been extensively tested.
+This is a list of tested and recommended Hardware. **Recommended** means it has been tested by the developers and works well (presumably out of the box). This is not a complete list of all compatible Hardware, but if you run into issues, consider using something that has been extensively tested. See the [Shopping List](Shopping-List.md) for vendor links and pricing.
 
 ## Recommended
 

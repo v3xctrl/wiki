@@ -1,4 +1,4 @@
-This page lists all the carriers that have been tested with this project. Feel free to open an issue to share your experience with a new carrier.
+This page lists all the carriers that have been tested with this project. See [Modems](Modems.md) for modem specifications and debugging. Feel free to open an issue to share your experience with a new carrier.
 
 In most countries, there are only a few main Mobile Network Operators (MNOs) that own and operate the network infrastructure. Many other carriers are Mobile Virtual Network Operators (MVNOs) that lease access from one of these MNOs. Because of this, if one MNO is supported, carriers using the same MNO are usually supported as well.
 

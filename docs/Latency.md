@@ -35,7 +35,7 @@ On the streamer it can take 51.5-116ms from the light hitting the lens until the
 On the viewer it can take from 2-52 ms until the frame is ready to be displayed.
 On the display it can take an additional 8-30ms 
 
-From capturing a frame to displaying it on-screen, the average latency is roughly **65–190 ms**, with typical values around **180–210 ms** depending on network conditions.
+From capturing a frame to displaying it on-screen, the pipeline latency is roughly **65–190 ms**, with real-world end-to-end measurements typically around **120–210 ms** depending on network conditions.
 
 ## Control Path (Viewer → Streamer)
 
@@ -72,7 +72,7 @@ When using a UDP Relay instead of a direct connection, expect **additional laten
 
 ## Measuring Latency
 
-## Network Latency
+### Network Latency
 On the control channel, we are sending Latency packets to measure network latency. Those packets are measuring round trip time:
 1. Viewer sends timestamped packet to streamer
 2. Streamer echos that packet back to viewer
@@ -81,7 +81,7 @@ On the control channel, we are sending Latency packets to measure network latenc
 
 > **NOTE:** Be aware that there is a bit of overhead in this number since we need to process the packet on both sides but that overhead is consistent and in the range of 1-2ms
 
-## End-to-End Latency
+### End-to-End Latency
 On the viewer, enable the Clock element in the OSD menu. This will display a clock in the bottom right of the screen. With the streamer, film the screen - make sure you are filming the clock on the bottom right so it can be seen properly in the center of the viewer. Record the viewer with screen recording software like OBS.
 
 In the recording, pick a frame and calculate the difference between the time in the center of the screen and the reference on the bottom right. This is your end-to-end latency - or at least a pretty good approximation of it.

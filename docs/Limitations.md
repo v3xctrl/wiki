@@ -8,3 +8,5 @@ Generally speaking, latency is less of an issue on slower vehicles and more crit
 
 ## Reception
 This plays into latency but needs to be mentioned separately, your mobile reception will have a lot of influence in how the system works. Different providers perform differently in different areas. It is highly recommended to do your research of how well your area is covered by different providers using tools like [cellmapper.net](https://cellmapper.net). See [Antennas](Antennas.md) for a detailed walkthrough on using Cellmapper.
+
+See also: [Known Issues](Known-Issues.md).

@@ -1,3 +1,5 @@
+v3xctrl is an open-source system for controlling RC vehicles and streaming live video over 4G/LTE networks. It consists of a **streamer** (Raspberry Pi-based) that captures video and receives control inputs, and a **viewer** application (Windows, Linux, Android) that displays the video feed and sends your commands.
+
 This guide is meant to get you up and running as quickly as possible. It is structured in such a way that you can set things up step by step, validating correct functionality in each step.
 
 ## 1. RPi Setup
@@ -146,4 +148,6 @@ Congratulations, now that the base setup is completed, there are a couple of thi
 
 * [Calibration](Calibration.md)
 * [Input Devices & Controller Setup](Input-devices.md)
-* Tune image settings
+* [Tuning encoder settings](Tuning-encoder-settings.md)
+
+> This guide covers direct connections. For relay and spectator modes, see [Connection Types](Connection-Types.md).

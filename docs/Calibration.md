@@ -22,3 +22,5 @@ Make sure to adjust trim such that the servo is centered. You will most likely h
 After calibration you can use ++w++, ++s++, ++a++, ++d++ in the viewer to verify movement. If steering is inverted, you can adjust it on your streamer in the *"Config editor"* tab under *"Controls" -> "Steering" -> "Invert Steering"*.
 
 At this point you can also go ahead and [set up a controller](Input-devices.md#setup) of your choice.
+
+> If calibration is not working, see [Troubleshooting](Troubleshooting.md).

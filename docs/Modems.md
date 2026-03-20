@@ -1,4 +1,4 @@
-This is a knowledge base for supported modems. Documentation is sparse at times, so we have collected relevant information here in one place.
+This is a knowledge base for supported modems. Documentation is sparse at times, so we have collected relevant information here in one place. See [Carriers](Carriers.md) for tested carrier information.
 
 ## Zero-4G-CAT1-Hub
 
