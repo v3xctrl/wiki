@@ -20,7 +20,7 @@ In this setup, both the viewer and streamer send their control and video data to
 Using a relay server adds a small amount of latency and depends on external infrastructure, which can sometimes be less reliable. We strive to keep our relay server highly available, but nothing beats a direct connection. We also reserve the right to make the Relay a paid feature: The relay needs extra hardware, bandwidth and maintenance. Once a critical user limit is reached, we can no longer pay this infrastructure out of our own pocket. Once this limit is reached we will strive to find a fair solution for everyone. 
 
 ### Access
-If you need access to a relay, join us on Discord and we will help you out with a **Session ID**.
+If you need access to a relay, join us on [Discord](https://discord.v3xctrl.com) and we will help you out with a **Session ID**.
 
 ### Setup
 Once you have your Relay **Session ID**, you need to set it up on the viewer and the streamer, and enable connection via relay on both sides.

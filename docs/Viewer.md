@@ -36,4 +36,4 @@ After manual edits, **restart the GUI** to apply changes.
 ## Mobile
 We also offer an APK for Android - it is currently not available through Google Play, but you can download it from the [releases](https://github.com/stylesuxx/v3xctrl/releases).
 
-The Android viewer only supports connection via the Relay, so you will need a valid session ID. You can obtain one by joining our [Discord](https://dsc.gg/v3xctrl).
+The Android viewer only supports connection via the Relay, so you will need a valid session ID. You can obtain one by joining our [Discord](https://discord.v3xctrl.com).
