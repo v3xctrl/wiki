@@ -102,7 +102,7 @@ journalctl -u v3xctrl-config-server -n50
 
 This service is responsible for the configuration web interface. It is running on port `80` by default and can be accessed via `http://v3xctrl.local`.
 
-> NOTE: You of course can also reach it with the IP address assigned by your router. 
+> NOTE: You of course can also reach it with the IP address assigned by your router.
 
 ### v3xctrl-wifi-mode (enabled by default)
 
@@ -123,6 +123,26 @@ This service is responsible for sending the video feed to the viewer.
 This service is responsible for the control connection between streamer and viewer and is ultimately what controls the actuators.
 
 > This service is not meant to be enabled. It is started by the `v3xctrl-service-manager` service if autostart is enabled in the config.
+
+## Recording
+
+The streamer can record video to the local SD card in H.264/MP4 format. Recordings are stored in `/data/recordings/`.
+
+### Auto-recording
+
+To automatically start recording when the video stream starts, enable it in the web interface: go to the "_Config Editor_" tab, scroll down to "_Autostart_" and check "_recording_". Click "_Save_".
+
+### Manual recording
+
+Recording can also be started and stopped manually from the [viewer](Viewer.md#recording).
+
+### Storage
+
+Recording storage depends on the configured bitrate. At the default 1.8 Mbps, expect approximately 810 MB per hour of recording. Make sure your SD card has sufficient free space on the `/data` partition.
+
+### Accessing recordings
+
+Recordings can be accessed via the Samba share (see below), by connecting to the streamer via SSH or via SD card directly.
 
 ### SAMBA share
 

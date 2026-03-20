@@ -1,5 +1,13 @@
 Testing network performance is important in order to assess your mobile carrier and your network situation in general. `v3xctrl` is pretty flexible in regards to network requirements but will require at least an LTE connection with 2Mbps upload bandwidth on the streamer side and a connection with at least 2Mbps download bandwidth on the viewer side. Technically less than that is possible, but then the video quality will suffer. 4Mbps bandwidth will give you great results with smooth, clear video - this is achievable on LTE Cat-1 hardware, so basically the lowest specced LTE modems should be fine.
 
+## Built-in Self-Tests
+
+The viewer includes a built-in relay test that can be accessed from the menu: open the menu with ++esc++, switch to the "_Network_" tab, and use the test button.
+
+This test verifies connectivity to the relay server and checks that your session or spectator ID is valid. It is a quick way to confirm your network setup is working before attempting a full connection.
+
+For more detailed network testing (bandwidth, jitter, UDP hole duration), see the sections below.
+
 ## Performance
 On the streamer, install `iperf3`:
 ```bash
