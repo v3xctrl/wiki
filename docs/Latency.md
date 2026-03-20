@@ -63,8 +63,9 @@ From reacting to a video frame and sending a control packet back to the streamer
 
 Combined latency (video + control round-trip) is therefore in the range of **75–240 ms** under normal conditions, with typical values around **190–230 ms**.
 
-> End-to-end latency below ~250 ms is generally considered acceptable for responsive remote control, though lower is better for fast maneuvers.
-> The **largest contributor** to latency is the **cellular network**. Choosing a strong, low-congestion 4G provider is crucial for good performance.
+!!! note
+    End-to-end latency below ~250 ms is generally considered acceptable for responsive remote control, though lower is better for fast maneuvers.
+    The **largest contributor** to latency is the **cellular network**. Choosing a strong, low-congestion 4G provider is crucial for good performance.
 
 ## UDP Relay
 
@@ -79,7 +80,8 @@ On the control channel, we are sending Latency packets to measure network latenc
 3. Viewer calculates round trip time
 4. Viewer displays RTT/2 as an estimate of one way network latency
 
-> **NOTE:** Be aware that there is a bit of overhead in this number since we need to process the packet on both sides but that overhead is consistent and in the range of 1-2ms
+!!! note
+    Be aware that there is a bit of overhead in this number since we need to process the packet on both sides but that overhead is consistent and in the range of 1-2ms
 
 ### End-to-End Latency
 On the viewer, enable the Clock element in the OSD menu. This will display a clock in the bottom right of the screen. With the streamer, film the screen - make sure you are filming the clock on the bottom right so it can be seen properly in the center of the viewer. Record the viewer with screen recording software like OBS.
@@ -126,7 +128,8 @@ Our **unaccounted latency is 61.9ms**. This has to be latency from things we can
 * GPU compositing
 * Display/monitor input lag
 
-> **Note:** The display being filmed by the camera adds its own input lag to the measurement. This is unavoidable when using a camera-based glass-to-glass test. In the real-world use case, this display latency wouldn't exist since you're filming the real world, not a monitor.
+!!! note
+    The display being filmed by the camera adds its own input lag to the measurement. This is unavoidable when using a camera-based glass-to-glass test. In the real-world use case, this display latency wouldn't exist since you're filming the real world, not a monitor.
 
 ## Real world latency tests
 As you can see from above, latency has a LOT of variables, when testing, we want to reduce as many variables as possible, to do so we will run all the tests at the same settings:
@@ -142,7 +145,8 @@ As you can see from above, latency has a LOT of variables, when testing, we want
 * Viewer: Clock enabled, debug widget enabled
 * RPi Cam v3
 
-> **NOTE:** if anything deviates from these defaults, it is mentioned so in the following tests. 
+!!! note
+    If anything deviates from these defaults, it is mentioned so in the following tests.
 
 ## Ethernet
 In this test we use an USB-C Ethernet adapter to exclude as much network latency as possible. We use the above described method to measure latency, we will pick min and max latency measurements from the recording and calculate the average.
@@ -168,11 +172,13 @@ Now this will depend on provider, location, band and reception. This is measured
 | 60 FPS   | 164ms | 199ms | 181ms |
 | Uncapped | 139ms | 165ms | 152ms |
 
-> **NOTE:** This is a great example of fluctuations. Uncapped should improve by max 15ms, but in this case we could also see lower latency in general while doing the uncapped test.
+!!! note
+    This is a great example of fluctuations. Uncapped should improve by max 15ms, but in this case we could also see lower latency in general while doing the uncapped test.
 
 ## Pushing latency
 
-> **NOTE:** When testing settings on the streamer and watching the logs, it is important to compare a consistent image, for this it makes sense to put something over the camera to have a black image. This obviously simulates a "best case" for the pipeline since the image is not changing at all, a "worst case" for the camera since it needs the longest exposure time, but also allows for easy comparisons.
+!!! note
+    When testing settings on the streamer and watching the logs, it is important to compare a consistent image, for this it makes sense to put something over the camera to have a black image. This obviously simulates a "best case" for the pipeline since the image is not changing at all, a "worst case" for the camera since it needs the longest exposure time, but also allows for easy comparisons.
 
 ### Force wide FOV / HDR enable
 Using either of those options will increase the FOV significantly, but will also increase the time consumed to fetch the image from the camera - this option adds 15ms - 20ms of latency.
@@ -187,7 +193,8 @@ To decrease latency more, you can overclock the GPU frequency to 450MHz instead 
 gpu_freq=450
 ```
 
-> **NOTE:** When overclocking you will need some additional cooling, either a heatsink or a small fan, otherwise the RPi will overheat and start thermal throttling, resulting in jitter from the camera and ultimately, lots of dropped frames.
+!!! warning
+    When overclocking you will need some additional cooling, either a heatsink or a small fan, otherwise the RPi will overheat and start thermal throttling, resulting in jitter from the camera and ultimately, lots of dropped frames.
 
 ### Uncapping viewer
 You can let the viewer run in uncapped mode - setting "_Main Loop FPS_" to 0, this will increase the loop to whatever the system can handle, resulting in frames being displayed significantly quicker if they are available. This can improve latency by about 10ms.

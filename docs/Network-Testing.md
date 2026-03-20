@@ -16,7 +16,8 @@ sudo apt install iperf3
 
 On the machine you are running the viewer on, also install `iperf3`. This will only work in direct mode with a fixed IP (or DynDNS for that matter).
 
-> **NOTE:** Preferably test on the same port that you are using for your video stream. In the example this will be `9999`.
+!!! note
+    Preferably test on the same port that you are using for your video stream. In the example this will be `9999`.
 
 ### Server
 On the server run:
@@ -44,7 +45,8 @@ This will saturate your connection and show the actual maximum throughput. Look 
 
 This test tells us that we had an average bitrate of 3.99Mbps for a duration of 60 seconds. This test makes me confident enough to choose the 3.0Mbps setting (realistic maximum for 4G, Cat-1)
 
-> **NOTE:** We are testing up to 100Mbps, but since the video encoder uses h264 encoding level 4.1 which caps out at 50Mbps we would not be able to use the max bandwidth anyway.
+!!! note
+    We are testing up to 100Mbps, but since the video encoder uses h264 encoding level 4.1 which caps out at 50Mbps we would not be able to use the max bandwidth anyway.
 
 #### Constant bitrate jitter and reliability test
 

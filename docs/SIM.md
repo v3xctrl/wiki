@@ -13,7 +13,8 @@ In the security settings, disable the PIN. Reboot your phone, make sure it does 
 ## 3. Test in Modem
 Insert your SIM card in the modem and start the streamer.
 
-> **NOTE:** You will need to start the streamer with the SIM card inserted or you will have to manually reboot the modem after inserting the SIM card: AT+CFUN=1,1
+!!! warning
+    You will need to start the streamer with the SIM card inserted or you will have to manually reboot the modem after inserting the SIM card: AT+CFUN=1,1
 
 ### Web Interface
 You can check the SIM and modem status from the streamer's web interface under the "_Modem_" tab. Make sure the control service is stopped before checking. See [Quickstart - Modem Setup](index.md#6-modem-setup) for details.

@@ -14,7 +14,8 @@ UDP in the context of 4G networks has a couple downsides:
   * The viewer responds through this hole.
   * The streamer keeps the hole alive by sending periodic UDP packets, which aligns with our need to transmit telemetry data anyway.
 
-> 4G networks often use CGNAT, preventing direct inbound connections; UDP hole punching usually works, but some NAT types or carrier restrictions may require a relay server.
+!!! note
+    4G networks often use CGNAT, preventing direct inbound connections; UDP hole punching usually works, but some NAT types or carrier restrictions may require a relay server.
 
 ## Bandwidth Constraints
 

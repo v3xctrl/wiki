@@ -24,7 +24,8 @@ pyenv install 3.11.9
 pyenv global 3.11.9
 python --version
 ```
-> **Info:** You may need some dependencies, which are documented here for pyenv: https://github.com/pyenv/pyenv/wiki
+!!! info
+    You may need some dependencies, which are documented here for pyenv: https://github.com/pyenv/pyenv/wiki
 
 Clone the repo and create a virtual environment:
 
@@ -58,7 +59,8 @@ python -m v3xctrl_ui.main --log DEBUG
 
 ### Windows 11
 
-> **NOTE:** None of the project’s developers use Windows. We cannot offer detailed support for Windows development.
+!!! warning
+    None of the project’s developers use Windows. We cannot offer detailed support for Windows development.
 
 Windows setup is more cumbersome and should only be used if you’re comfortable troubleshooting on your own.
 
@@ -86,7 +88,8 @@ The viewer is one of the more complex parts architecture wise and is split up in
 
 ## Streamer
 
-> For development, it’s strongly recommended to use the provided custom PiOS image as a starting point.
+!!! note
+    For development, it’s strongly recommended to use the provided custom PiOS image as a starting point.
 
 ### Read-Write Mode
 
@@ -195,7 +198,8 @@ dmesg -c
 
 ### Serial Console (optional but recommended)
 
-> **Note:** Already enabled when using our custom image.
+!!! note
+    Already enabled when using our custom image.
 
 For easier debugging, enable a serial login console:
 

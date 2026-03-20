@@ -34,11 +34,19 @@ Connect your peripherals according to the following pinout:
 </tr>
 </table>
 
-> **\*** those pins are additionally broken out on our custom Pi-Hat and you do not need to connect them if you don't want this extra functionality: LED0-2 Debugging LEDs showing current state of the streamer. IO21 & IO26 IO pins that do not have functionality yet but can be used for additional functionality. PWM2.1 and PWM1.1 Can either be used as additional GPIO or as Backup PWM pins in case the main ones get damaged for some reason. 
+Pins marked with **\*** are additionally broken out on our custom Pi-Hat. You do not need to connect them if you don't want this extra functionality:
 
-> Some pins might be configurable, but wiring up like this will be the easiest, most consistent and reliable way.
+| Pin(s) | Function |
+|--------|----------|
+| LED0, LED1, LED2 | Debugging LEDs showing current state of the streamer |
+| IO21, IO26 | IO pins without functionality yet, available for custom use |
+| PWM1.1, PWM2.1 | Backup PWM pins or additional GPIO |
 
-> **NOTE:** Although a Raspberry Pi Zero 2 W is depicted here, the pinout is the same for all supported Raspberry Pis: **Raspberry Pi Zero 2 W, Pi 3 and Pi 4**.
+!!! note
+    Some pins might be configurable, but wiring up like this will be the easiest, most consistent and reliable way.
+
+!!! note
+    Although a Raspberry Pi Zero 2 W is depicted here, the pinout is the same for all supported Raspberry Pis: **Raspberry Pi Zero 2 W, Pi 3 and Pi 4**.
 
 The only really mandatory connections are `PWM1` and `PWM2` for Servo and Speed-controller. The INA is highly recommended for voltage monitoring.
 
@@ -51,7 +59,8 @@ UART0 is the only available hardware UART and can be used for one of the followi
 
 The best option is to power the RPi and modem directly through the 5V rail with a clean BEC (or DC/DC converter) capable of pushing at least 2A. Technically you could also power the setup via ESC if you can run your ESC at 5V.
 
-> Technically the RPi should be fine to 6V input on the 5V rail, but this is out of spec and not recommended. Keep in mind that the RPi Zero 2 W has no over voltage or over current protection so a reliable BEC is really a must.
+!!! warning
+    Technically the RPi should be fine to 6V input on the 5V rail, but this is out of spec and not recommended. Keep in mind that the RPi Zero 2 W has no over voltage or over current protection so a reliable BEC is really a must.
 
 ## INAxxx - current/voltage sensor
 

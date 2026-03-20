@@ -4,9 +4,11 @@ The streamer is the heart of the project: Transmitting (and recording) video, re
 
 We provide a PiOS based - ready to flash - image. It can be flashed to an SD card using the [Raspberry Pi Imager Utility](https://www.raspberrypi.com/software/).
 
-> **NOTE:** You will need to use RPi Imager v2.x - the old v1.x version will not work reliably.
+!!! warning
+    You will need to use RPi Imager v2.x - the old v1.x version will not work reliably.
 
-> **NOTE:** We are currently in the process of getting the image added to the official RPi Imager repository. Until this is done, you will have to point Imager to our custom repository located at https://v3xctrl.com/rpi-imager/v3xctrl_repo.json You can add this through "_App Options_" -> "_Content Repository_" ->"_Edit_" -> "_Use custom URL_". Be aware that this needs to be set every time you restart RPi Imager. When starting the imager via command line you can also pass the repository as a parameter: `sudo ./Raspberry_Pi_Imager-v2.0.3-desktop-x86_64.AppImage --repo https://v3xctrl.com/rpi-imager/v3xctrl_repo.json`
+!!! note
+    We are currently in the process of getting the image added to the official RPi Imager repository. Until this is done, you will have to point Imager to our custom repository located at https://v3xctrl.com/rpi-imager/v3xctrl_repo.json You can add this through "_App Options_" -> "_Content Repository_" ->"_Edit_" -> "_Use custom URL_". Be aware that this needs to be set every time you restart RPi Imager. When starting the imager via command line you can also pass the repository as a parameter: `sudo ./Raspberry_Pi_Imager-v2.0.3-desktop-x86_64.AppImage --repo https://v3xctrl.com/rpi-imager/v3xctrl_repo.json`
 
 ### Setup steps
 
@@ -43,12 +45,14 @@ If you can connect, you are ready for the next step of the configuration.
 
 If you cannot connect, check the [troubleshooting section](Troubleshooting.md#ssh-connection)
 
-> **SUCCESS:** If at this point you can connect, installation went fine and you can continue with configuration.
+!!! success
+    If at this point you can connect, installation went fine and you can continue with configuration.
 
 ## WiFi
 After going through setup via Imager, you should already be connected to your home WiFi. You can add arbitrary other Host WiFi networks. Keep in mind that on startup the streamer will attempt to connect to any of the pre-configured WiFi networks if possible.
 
-> **Note:** Best practice is to only have one Host WiFi configured, this way you can be confident about which network the streamer will connect. If no pre-configured Host Network is found, the streamer will create an Access Point.
+!!! note
+    Best practice is to only have one Host WiFi configured, this way you can be confident about which network the streamer will connect. If no pre-configured Host Network is found, the streamer will create an Access Point.
 
 ### Adding a Host network
 To add another host network, connect via SSH and scan for available networks:
@@ -70,7 +74,8 @@ sudo nmcli connection add \
     connection.autoconnect yes
 ```
 
-> **NOTE:** Be aware that this will only add a connection but not connect you. You will only be connected after a reboot.
+!!! note
+    Be aware that this will only add a connection but not connect you. You will only be connected after a reboot.
 
 To remove a network, simply delete the config file.
 
@@ -96,7 +101,8 @@ systemctl restart v3xctrl-config-server
 journalctl -u v3xctrl-config-server -n50
 ```
 
-> NOTE: Always start the services through `systemd`, this will ensure that they will run with the correct users and permissions.
+!!! warning
+    Always start the services through `systemd`, this will ensure that they will run with the correct users and permissions.
 
 ### v3xctrl-config-server (enabled by default)
 

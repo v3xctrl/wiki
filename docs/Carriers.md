@@ -10,7 +10,8 @@ There are two types of MVNOs:
 
 MVNOs—especially reseller types—may have some limitations compared to the main operators. These can include lower traffic priority during network congestion, restricted access to certain frequency bands, or missing features such as VoLTE or 5G (which generally are not an issue for this project).
 
-> For the most reliable performance, using a SIM from one of the main MNOs is recommended.
+!!! tip
+    For the most reliable performance, using a SIM from one of the main MNOs is recommended.
 
 ## Testing
 

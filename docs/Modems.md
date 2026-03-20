@@ -12,7 +12,8 @@ It comes in **four distinct versions**, usually labeled on top of the MCU:
 | CAT1-EU  | 1, 3, 7, 8, 20, 28 | No  | 10Mbps down, 5Mbps up |
 | CAT1-EA  | 1, 3, 5, 7, 8, 28 | No  | 10Mbps down, 5Mbps up |
 
-> **TIP:** Check which LTE bands are used by your carrier in your area on [cellmapper.net](https://www.cellmapper.net/map) before purchasing a modem. See [Antennas](Antennas.md) for a detailed guide on evaluating bands in your region.
+!!! tip
+    Check which LTE bands are used by your carrier in your area on [cellmapper.net](https://www.cellmapper.net/map) before purchasing a modem. See [Antennas](Antennas.md) for a detailed guide on evaluating bands in your region.
 
 
 ### Enabling All Factory-Supported Bands
@@ -121,7 +122,8 @@ Disable IPv6 if needed:
 AT+CGACT=0,2
 ```
 
-> **NOTE:** Context changes may reset after a modem reboot.
+!!! note
+    Context changes may reset after a modem reboot.
 
 ## AT command cheat sheet
 Useful commands when evaluating or debugging new modems.

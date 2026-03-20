@@ -1,4 +1,5 @@
-> **NOTE:** X-Files are only relevant for developers/maintainers!
+!!! note
+    X-Files are only relevant for developers/maintainers!
 
 ## Packages
 

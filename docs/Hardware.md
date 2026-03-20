@@ -46,7 +46,8 @@ This should show output similar to the following
 [   12.173300] imx708 10-001a: camera module ID 0x0302
 ```
 
-> NOTE: Do not forget to switch back to RO mode once you are done.
+!!! warning
+    Do not forget to switch back to RO mode once you are done.
 
 #### OV5647 (Picamera V1.3, Bewinner)
 
@@ -80,7 +81,8 @@ camera_auto_detect=0
 dtoverlay=ov5647,rotation=180
 ```
 
-> NOTE: Do not forget to switch back to RO mode once you are done.
+!!! warning
+    Do not forget to switch back to RO mode once you are done.
 
 ## Tested
 
@@ -113,7 +115,8 @@ The following components are expected to work but have not been explicitly teste
 
 * Any 4G modem that provides an **RNDIS interface** should work.
 
-> It is strongly recommended to use a modem that also provides a **serial interface** for querying modem stats via AT commands. Without this, features like reception monitoring, signal quality reporting, and band limitation configuration will not work.
+!!! warning
+    It is strongly recommended to use a modem that also provides a **serial interface** for querying modem stats via AT commands. Without this, features like reception monitoring, signal quality reporting, and band limitation configuration will not work.
 
 * [Cat 4, 4G Modem hat with GPS (SIM7600G-H 4G HAT)](https://aliexpress.com/item/1005005628834373.html)
 

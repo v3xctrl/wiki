@@ -80,7 +80,8 @@ Following the [pinout guide](Pinout.md), connect your hardware. You can attach e
 
 ESC should be connected to `GND` and `PWM1`, Servo should be connected to `GND` and `PWM2`.
 
-> Before powering up the streamer, make sure that your vehicle is in a safe position. Depending on your ESC, your motor might start to spin if calibration is not yet done.
+!!! warning
+    Before powering up the streamer, make sure that your vehicle is in a safe position. Depending on your ESC, your motor might start to spin if calibration is not yet done.
 
 Make sure ESC has power and the servo is being powered from the ESC too. Start the streamer.
 
@@ -109,7 +110,8 @@ Before connecting the 5V power supply, make sure the Raspberry Pi is no longer p
 
 Voltage sensor is not mandatory, but highly recommended if you want to get the most out of your batteries. Connect the INA of your choosing to `3.3V`, `GND`, `SDA` and `SCL`. Finally connect the `VBUS` pin of your INA to the battery positive plug.
 
-> The INA by default uses the I2C address of 0x40 and will be automatically picked up on boot if attached.
+!!! note
+    The INA by default uses the I2C address of 0x40 and will be automatically picked up on boot if attached.
 
 !!! success "Validation"
     Attach your power source, wait for the streamer to boot up and verify with the viewer that voltage telemetry is being transmitted.
@@ -124,7 +126,8 @@ Now that everything has been tested on the local network, the last step is to ad
 
 Boot up the streamer, use the web interface `http://v3xctrl.local` and go to the "_Modem_" tab.
 
-> For the "_Modem_" tab to show details, you have to make sure that the control service is not running, you can stop it from the "_Services_" tab
+!!! note
+    For the "_Modem_" tab to show details, you have to make sure that the control service is not running, you can stop it from the "_Services_" tab
 
 Confirm the following details:
 
@@ -136,7 +139,8 @@ If those above points are true, then you are ready to stream over your mobile ne
 
 Go to the "_Config Editor_" tab, in the Server section enter the **external IP address** of your viewer (you can use [whatismyipaddress.com](https://whatismyipaddress.com/) to find it, if you don't know it), scroll down to "_Network_", expand, scroll to "_routing_" and select "_RNDIS_". Further down in the Modem section, select the "_Model_" of your modem. Scroll to the bottom and click "_Save_".
 
-> After changing routing type you will have to restart the streamer.
+!!! warning
+    After changing routing type you will have to restart the streamer.
 
 !!! success "Validation"
     * The OSD in the viewer shows Latency and Modem details in the upper right corner

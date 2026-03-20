@@ -4,7 +4,8 @@ There are several connection types available:
 
 The Viewer has a static IP and reserved ports to which the streamer can connect.
 
-> This is the simplest, most reliable and recommended connection type for most use cases.
+!!! success
+    This is the simplest, most reliable and recommended connection type for most use cases.
 
 ## Relay
 
@@ -25,7 +26,8 @@ If you need access to a relay, join us on [Discord](https://discord.v3xctrl.com)
 ### Setup
 Once you have your Relay **Session ID**, you need to set it up on the viewer and the streamer, and enable connection via relay on both sides.
 
-> **CAUTION:** Do not share your session ID with anyone. Anyone with your session ID will be able to connect to your streamer, see the video stream and control your device.
+!!! warning
+    Do not share your session ID with anyone. Anyone with your session ID will be able to connect to your streamer, see the video stream and control your device.
 
 ### Transport
 

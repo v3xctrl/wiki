@@ -15,7 +15,8 @@ If you connect via SSH and you see the Firstboot message and Firstboot does not 
 
 `cat /boot/firmware/firstboot.log`
 
-> **NOTE:** Oftentimes this is an issue with the SD card. Make sure you use a high quality SD card since problems will only accumulate from this point.
+!!! warning
+    Oftentimes this is an issue with the SD card. Make sure you use a high quality SD card since problems will only accumulate from this point.
 
 ## Config Server
 The webserver for configuration is started by default after installing the package.
@@ -66,7 +67,8 @@ If the `Video` FPS counter does not show the configured FPS (30 per default), th
 1. If the main `Loop` also is not running at full (60 by default) FPS, then your viewer machine is the issue.
 2. If the main `Loop` is running at full FPS, but the `Video` loop is dropping, then this is most likely an issue with the network connection. Run the self check tests. The default video is set to 1.8Mbps, if your connection tests slower than that, then you need to adjust the bitrate accordingly. Tests have shown that a bitrate of 1Mbps is still usable.
 
-> As a reference, with a Cat 1, 4G modem your maximum upload speed will be 5Mbps. Benchmarks have shown that more realistically your upload will be at around 3.5Mbps on average. But this depends a lot on your provider and the coverage in your area.
+!!! note
+    As a reference, with a Cat 1, 4G modem your maximum upload speed will be 5Mbps. Benchmarks have shown that more realistically your upload will be at around 3.5Mbps on average. But this depends a lot on your provider and the coverage in your area.
 
 ### A lot of blocking/artifacts
 
@@ -147,7 +149,8 @@ And this is where the counter-intuitive behavior comes in: more movement in the 
 
 ## Modem
 
-> SIM activation can be finicky at times. It is highly recommended to initially activate the SIM card on a phone, disable the pin and make sure that data works. Activation might differ from country to country and can be very hard to streamline just via the modem. Once you disabled the PIN and made sure that data works, the SIM card will most likely also work in the modem.
+!!! warning
+    SIM activation can be finicky at times. It is highly recommended to initially activate the SIM card on a phone, disable the pin and make sure that data works. Activation might differ from country to country and can be very hard to streamline just via the modem. Once you disabled the PIN and made sure that data works, the SIM card will most likely also work in the modem.
 
 If the modem is not showing up in `ip a s`:
 
@@ -184,7 +187,8 @@ When you see the modem to connect, disconnect and re-enumerate in DMESG, it indi
 This might especially be a problem with the modem that comes with pogo pins. The best way to fix this is to remove the pogo pins and solder directly to the pads. This can be a bit finicky. Alternatively it can also help to tin the pads slightly.
 
 ## Reverse SSH shell
-> Only use this when you know what you are doing or when any of the team asks you to.
+!!! warning
+    Only use this when you know what you are doing or when any of the team asks you to.
 
 Sometimes it might be helpful to have access to the streamer via SSH when in the field. For this a reverse SSH shell is in place. In the "Extras" tab you will find a setting for a remote Server which the reverse shell will open to.
 
@@ -200,7 +204,8 @@ You can then start the Reverse Shell via the viewer's "Streamer" menu.
 SD card issues are more common than you might think and symptoms are unfortunately super random.
 It is a good idea to benchmark fresh SD cards and keep track of their degradation over time.
 
-> A good, high quality SD card is important. In normal use the SD card is only written for config files and recordings. For that, technically Class 10/U1 is fine. U3 is obviously better, and U3 with A2 (good random I/O performance) is optimum. Realistically you should go with a U3/A1 card - those are widely available. **Do not cheap out on SD cards, it's simply not worth the hassle.**
+!!! warning
+    A good, high quality SD card is important. In normal use the SD card is only written for config files and recordings. For that, technically Class 10/U1 is fine. U3 is obviously better, and U3 with A2 (good random I/O performance) is optimum. Realistically you should go with a U3/A1 card - those are widely available. **Do not cheap out on SD cards, it's simply not worth the hassle.**
 
 ### Symptoms
 * I/O errors are a dead giveaway
