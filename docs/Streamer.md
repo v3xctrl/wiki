@@ -18,7 +18,7 @@ We provide a PiOS based - ready to flash - image. It can be flashed to an SD car
 
 ### Customization
 * **Hostname**: Set hostname to something unique in your network, preferably identifying your model like: `v3xctrl-scx24`
-* **Localization**: set your actual timezone and preferred keyboard layout
+* **Localization**: set your actual timezone and preferred keyboard layout. The country setting also determines the WiFi regulatory domain, which affects available channels and maximum transmit power. The least restrictive regions are Belize (BZ) and Bolivia (BO) with 13 channels and 30 dBm, followed by the US with 11 channels and 30 dBm. Most EU countries allow 13 channels but cap power at 20 dBm. Note that the RPi Zero 2 W's WiFi chip (CYW43439) caps transmit power at ~20 dBm regardless of the regulatory setting.
 * **User**: Set username and password of your choosing
 * **Wifi**: Set SSID and password of your home network
 * **Remote Access**: Enable SSH and if possible use SSH key for authentication. During normal usage you will do most things via the Web interface, but having direct system access might be necessary at times.
