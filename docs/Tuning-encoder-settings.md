@@ -55,3 +55,18 @@ In the back corners of my flat I see that frames start being dropped, but genera
 I-frame size stays way below my set maximum of 88KB - sometimes the I-frame size spikes up to 53KB. At this point I am quite happy with how things are, I set `Maximum I-frame bytes` to 61440 (60KB). Just to have a sane limit which does not get hit anyway, but at least I can be sure to not go over this size should any factor change.
 
 I could tighten up `Min QP` a bit, but since I have `Enable auto adjust I-frame size` checked, I am not really bothered by that. Should I see some stuttering in the future, I might increase `Min QP` for a smoother start.
+
+## Intra-refresh mode (I-frame interval = 0)
+
+!!! warning
+    This mode is **not recommended** for real-world use over lossy networks. It is documented here for completeness.
+
+Setting `I-frame Interval` to 0 disables periodic I-frames entirely. The encoder produces a single IDR frame at the very start of the stream and then only P-frames from that point on. This eliminates the periodic bitrate spikes caused by I-frames, resulting in a smoother bitrate profile.
+
+However, this comes with significant downsides:
+
+* **Very sensitive to packet loss.** Without periodic I-frames there is no recovery mechanism. A single lost packet causes visual artifacts that persist indefinitely since every subsequent P-frame references the corrupted data.
+* **Mid-stream join is not possible.** Decoders require an IDR frame to start decoding. Since only one is sent at the very beginning, spectators or reconnecting viewers will see a black screen or fail to decode entirely.
+* **The RPi implementation is not robust.** The V4L2 hardware encoder on the RPi Zero 2 W does not support true cyclic intra-refresh (where a scrolling column of intra-coded macroblocks gradually repairs the image). What you get is simply endless P-frames with no error recovery at all.
+
+For any use case involving a mobile network, periodic I-frames are essential for recovering from the inevitable packet loss.
