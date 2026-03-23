@@ -21,3 +21,6 @@ This issue may be caused by EMI (electromagnetic interference). It can be induce
 
 #### Solution
 The easiest solution is to move the source of EMI away from the camera cable or the camera itself. If this is not possible, shielding the cable with copper tape may help. You can also connect the tape to GND to improve the shielding effectiveness.
+
+## Builing Image in WSL2
+Building a flashable Image in WSL2 will not work as F2FS is not supported by its kernel.
