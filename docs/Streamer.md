@@ -54,6 +54,9 @@ After going through setup via Imager, you should already be connected to your ho
 !!! note
     Best practice is to only have one Host WiFi configured, this way you can be confident about which network the streamer will connect. If no pre-configured Host Network is found, the streamer will create an Access Point.
 
+!!! warning
+    Be careful when connecting to unknown or public WiFi networks. The streamer exposes a web interface on port 80 without authentication. Anyone on the same network could access the configuration, control your vehicle, or modify settings. Only connect to networks you trust.
+
 ### Adding a Host network
 To add another host network, connect via SSH and scan for available networks:
 
