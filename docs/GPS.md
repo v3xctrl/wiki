@@ -89,7 +89,7 @@ Prints fix type and coordinates as they update. Useful to confirm the module is 
 python -m v3xctrl_telemetry.apps.debug_gps
 ```
 
-Shows detailed per-satellite signal strength (CN0), RF health (AGC, jamming), antenna status, and warns about signal issues. See [GPS-Debug-Reference.md](GPS-Debug-Reference.md) for how to interpret the output.
+Shows detailed per-satellite signal strength (CN0), RF health (AGC, jamming), antenna status, and warns about signal issues. See [GPS-Debug-Reference](GPS-Debug-Reference.md) for how to interpret the output.
 
 ---
 
