@@ -2,8 +2,6 @@
 
 V3XCTRL supports GPS for live position telemetry displayed in the viewer OSD.
 
----
-
 ## Supported Modules
 
 | Module type | Protocol | Notes |
@@ -12,8 +10,6 @@ V3XCTRL supports GPS for live position telemetry displayed in the viewer OSD.
 | Generic (MediaTek, SiRF, etc.) | NMEA | Outputs at module default rate (~1 Hz) |
 
 The system auto-detects the protocol on startup. If detection fails, use `--gps-module` to force a specific protocol.
-
----
 
 ## Hardware Connection
 
@@ -26,7 +22,7 @@ Connect the GPS module to the Raspberry Pi GPIO header via UART:
 | TX | RX (pin 10) | GPIO 15 |
 | RX | TX (pin 8) | GPIO 14 |
 
-> **Important:** Use 5V power, not 3.3V. Running at 3.3V causes very poor signal quality (CN0 8-22 dBHz instead of the required 32+ dBHz) and the module will not get a reliable fix.
+> **Important:** If your module is rated for 5V power use 5V, not 3.3V. Running at 3.3V causes very poor signal quality (CN0 8-22 dBHz instead of the required 32+ dBHz) and the module will not get a reliable fix.
 
 ### Enable UART on the Pi
 
@@ -46,8 +42,6 @@ enable_uart=1
 ```
 
 Reboot after making changes.
-
----
 
 ## Configuration
 
@@ -69,8 +63,6 @@ Example:
 
 > **Note:** For NMEA modules the rate setting is ignored - the module outputs at its own fixed rate (usually 1 Hz).
 
----
-
 ## Testing
 
 Test GPS on the Pi with the diagnostic scripts:
@@ -90,8 +82,6 @@ python -m v3xctrl_telemetry.apps.debug_gps
 ```
 
 Shows detailed per-satellite signal strength (CN0), RF health (AGC, jamming), antenna status, and warns about signal issues. See [GPS-Debug-Reference](GPS-Debug-Reference.md) for how to interpret the output.
-
----
 
 ## Fix Times
 
