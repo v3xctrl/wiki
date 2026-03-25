@@ -72,6 +72,7 @@ nav:
     - Modems: Modems.md
     - SIM: SIM.md
     - Antennas: Antennas.md
+    - GPS: GPS.md
     - UART: UART.md
     - Defaults: Defaults.md
   - Viewer:
