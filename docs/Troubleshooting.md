@@ -186,6 +186,9 @@ When you see the modem to connect, disconnect and re-enumerate in DMESG, it indi
 
 This might especially be a problem with the modem that comes with pogo pins. The best way to fix this is to remove the pogo pins and solder directly to the pads. This can be a bit finicky. Alternatively it can also help to tin the pads slightly.
 
+## GPS Module does not find Satellites
+If your GPS Modem can not find sattelites or the connection is unstable you may do some debuging about the signal/jammin/nois happening on your build. For details check https://wiki.v3xctrl.com/GPS/
+
 ## Reverse SSH shell
 !!! warning
     Only use this when you know what you are doing or when any of the team asks you to.
