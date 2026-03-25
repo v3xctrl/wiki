@@ -7,8 +7,6 @@ Run the script on the Pi:
 sudo /opt/v3xctrl-venv/bin/python3 -m v3xctrl_telemetry.apps.debug_gps
 ```
 
----
-
 ## NAV-PVT - Fix Type
 
 | Value | Name        | Meaning                                    |
@@ -22,7 +20,6 @@ sudo /opt/v3xctrl-venv/bin/python3 -m v3xctrl_telemetry.apps.debug_gps
 
 **Expected:** `3D` in open sky. `NO_FIX` is normal during cold start (can take 30-60s).
 
----
 
 ## NAV-PVT - Satellite Count (`numSV`)
 
@@ -35,7 +32,6 @@ sudo /opt/v3xctrl-venv/bin/python3 -m v3xctrl_telemetry.apps.debug_gps
 
 **Warning threshold:** Drop of 2 or more satellites in one cycle is flagged.
 
----
 
 ## NAV-SAT - Signal Strength (CN0, dBHz)
 
@@ -54,7 +50,6 @@ Carrier-to-noise density ratio per satellite. Higher is better.
 
 Minimum to decode navigation data from a satellite: ~32 dBHz.
 
----
 
 ## NAV-SAT - Satellite Health
 
@@ -64,7 +59,6 @@ Minimum to decode navigation data from a satellite: ~32 dBHz.
 | 1     | Healthy - normal         |
 | 2     | Unhealthy - ignore data  |
 
----
 
 ## NAV-SAT - GNSS System IDs
 
@@ -80,7 +74,6 @@ Minimum to decode navigation data from a satellite: ~32 dBHz.
 
 The u-blox M10 can track up to 3 GNSS systems simultaneously.
 
----
 
 ## MON-RF - Antenna Status
 
@@ -94,7 +87,6 @@ The u-blox M10 can track up to 3 GNSS systems simultaneously.
 
 **Expected:** `OK`. `SHORT` or `OPEN` indicate a hardware problem.
 
----
 
 ## MON-RF - Antenna Power
 
@@ -104,7 +96,6 @@ The u-blox M10 can track up to 3 GNSS systems simultaneously.
 | 1     | ON   | Antenna powered - normal             |
 | 2     | UNKN | Unknown                              |
 
----
 
 ## MON-RF - Jamming Indicator (`jamInd`)
 
@@ -119,9 +110,6 @@ Continuous-wave jamming indicator. Scale: 0-255.
 
 **Warning threshold:** > 50.
 
-Note: This indicator responds to narrow-band (CW) interference only.
-
----
 
 ## MON-RF - Jamming State (flags bits 0-1)
 
@@ -132,7 +120,6 @@ Note: This indicator responds to narrow-band (CW) interference only.
 | 2     | WARNING  | Jamming detected                                   |
 | 3     | CRITICAL | Strong jamming - position may be unreliable        |
 
----
 
 ## MON-RF - AGC Count (`agcCnt`)
 
@@ -146,7 +133,6 @@ Automatic gain control counter. Reflects the receiver's gain adjustment to maint
 
 No fixed threshold - watch for sudden changes relative to baseline.
 
----
 
 ## MON-RF - Noise per ms (`noisePerMS`)
 
@@ -158,7 +144,6 @@ Background RF noise measurement.
 | > 150      | Elevated noise - possible interference |
 | > 200      | High noise - likely RF issues nearby |
 
----
 
 ## Typical Healthy Output (open sky, 3D fix)
 
