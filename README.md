@@ -4,7 +4,7 @@ Documentation for [v3xctrl](https://github.com/stylesuxx/v3xctrl), built with [M
 
 ## View the docs
 
-Visit the live site at: https://v3xctrl.github.io/
+Visit the live site at: [https://v3xctrl.github.io/](https://wiki.v3xctrl.com/)
 
 ## Local development
 
