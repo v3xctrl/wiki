@@ -83,7 +83,7 @@ The viewer is one of the more complex parts architecture wise and is split up in
 * **core**: The core components "glue" together all the elements, telemetry context, general app state and the renderer all live here.
 * **menu**: Functionality related to the menu and its tabs. If you want to add more settings, this is the place you should be looking in
 * **network**: Video receiver and control channel live here - this is by far the most complex part of the viewer. If you want to add an alternate video receiver, this would be the correct place.
-* **osd**: Functionality related to the on-screen-display, widgets and telemetry parsing functionality. If you want to add telemetry or change how OSD elements look, this is the correct folder.
+* **osd**: Functionality related to the on-screen display, widgets and telemetry parsing functionality. If you want to add telemetry or change how OSD elements look, this is the correct folder.
 * **utils**: Shared functionality that is not easy to assign to any specific category above, small helper functions that are used here and there.
 
 ## Streamer

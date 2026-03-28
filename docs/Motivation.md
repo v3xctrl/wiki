@@ -52,4 +52,4 @@ We use:
 * Python (custom build) for core logic
 * GStreamer for video encoding and transmission on the streamer
 
-When preparing the SD card, use the [Raspberry Pi Imager Utility](https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/) and pre-configure Wi-Fi settings for convenience.
+When preparing the SD card, use the [Raspberry Pi Imager Utility](https://www.raspberrypi.com/news/raspberry-pi-imager-imaging-utility/) and pre-configure WiFi settings for convenience.

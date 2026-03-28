@@ -143,7 +143,7 @@ These metrics should be used when evaluating carriers, modems and antennas. Keep
 * The above test is only running for 60 seconds, consider running it for a longer time-frame to catch thermal throttling, congestion patterns or periodic interference.
 * Run a couple of tests and average the results.
 * Match the test bitrate to your target stream bitrate for results closest to reality
-* the `-l` parameter is payload size, match this to your MTU value in the `gstreamer` transmitter
+* the `-l` parameter is payload size, match this to your MTU value in the `GStreamer` transmitter
 * Data usage - Just because you _can_ go with a higher bandwidth, doesn't mean you _should_. Also consider your data limits.
 
 ## Routing

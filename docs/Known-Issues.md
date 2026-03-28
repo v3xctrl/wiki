@@ -4,7 +4,7 @@ For video micro stutter and framerate issues, see [Troubleshooting - Video strea
 
 ## Desktop Viewer
 
-* **Frame-rate drops when window is being moved on Windows:** This is a pygame(-ce) limitation caused by Windows. The OS pauses rendering while a window is being dragged.
+* **Framerate drops when window is being moved on Windows:** This is a pygame(-ce) limitation caused by Windows. The OS pauses rendering while a window is being dragged.
 
 ## Android Viewer
 

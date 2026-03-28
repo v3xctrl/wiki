@@ -61,7 +61,7 @@ Most issues should be caught by the extensive test suite, a manual check should 
 
 ##### Edge Cases
 
-* [ ] Reboot streamer while viewer is running, make sure viewer will re-connect
+* [ ] Reboot streamer while viewer is running, make sure viewer will reconnect
 
 #### Android
 
@@ -92,7 +92,7 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Web interface is accessible in Client mode
 * [ ] Streamer starts in AP mode when no known Host WiFi is nearby
 * [ ] Web interface is accessible in AP mode
-* [ ] Control service auto starts by default
+* [ ] Control service autostarts by default
 * [ ] Video service autostarts when configured to do so
 * [ ] Settings are saved between reboots
 * [ ] Remounting to RW works (disables overlay FS and remounts /root/firmware as RW)

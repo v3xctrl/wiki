@@ -136,10 +136,10 @@ As you can see from above, latency has a LOT of variables, when testing, we want
 
 * 1.8Mbit target
 * 30FPS
-* I-Frame interval: 15
+* I-frame interval: 15
 * High Profile
 * No HDR, no wide FOV
-* No automatic I-Frame adjustments
+* No automatic I-frame adjustments
 * Control channel enabled
 * Viewer: 60 FPS loop
 * Viewer: Clock enabled, debug widget enabled

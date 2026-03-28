@@ -53,7 +53,7 @@ Some third-party cameras are not picked up by the RPi's auto-detection and requi
 
 * **Arducam 12MP IMX708**: Same chipset as the RPi Cam v3 but with hardware differences that prevent auto-detection. Works out of the box once the overlay is set.
 * **OV5647 (Picamera V1.3, Bewinner)**: Works out of the box with auto-detection, but can also be set up with a manual overlay. Generally speaking, IMX219 options will always be better than this one, so unless you already have one lying around, there is little upside of getting one.
-* **IMX219 (Arducam 8MP, generic Ali-Express options)**: Same chipset as the RPi Cam v2 but needs a manual overlay. There are a lot of IMX219 based cameras on Ali-Express for very little money.
+* **IMX219 (Arducam 8MP, generic AliExpress options)**: Same chipset as the RPi Cam v2 but needs a manual overlay. There are a lot of IMX219 based cameras on AliExpress for very little money.
 ### Rotating Image
 If you can only mount your camera upside down, you can rotate the image by adding the `rotation` parameter to your overlay in `/boot/firmware/config.txt` after switching to [RW mode](FAQ.md#how-can-i-enable-rw-mode):
 
