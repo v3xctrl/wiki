@@ -55,17 +55,15 @@ Some third-party cameras are not picked up by the RPi's auto-detection and requi
 * **OV5647 (Picamera V1.3, Bewinner)**: Works out of the box with auto-detection, but can also be set up with a manual overlay. Generally speaking, IMX219 options will always be better than this one, so unless you already have one lying around, there is little upside of getting one.
 * **IMX219 (Arducam 8MP, generic Ali-Express options)**: Same chipset as the RPi Cam v2 but needs a manual overlay. There are a lot of IMX219 based cameras on Ali-Express for very little money.
 ### Rotating Image
-If you can only mount your camera upside down, you can rotate the image by adding the following overlay in `/boot/firmware/config.txt` after changing [RW mode](FAQ.md#how-can-i-enable-rw-mode):
+If you can only mount your camera upside down, you can rotate the image by adding the `rotation` parameter to your overlay in `/boot/firmware/config.txt` after switching to [RW mode](FAQ.md#how-can-i-enable-rw-mode):
 
 For `IMX708` based cameras (they are usually rotated by 180 degrees):
 ```
-camera_auto_detect=0
 dtoverlay=imx708,rotation=0
 ```
 
 For `OV5647` based cameras:
 ```
-camera_auto_detect=0
 dtoverlay=ov5647,rotation=180
 ```
 
