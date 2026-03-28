@@ -20,52 +20,40 @@ This is a list of tested and recommended Hardware. **Recommended** means it has 
 [^2]: M12 lenses are a standard and can be exchanged for other lenses
 
 ### Additional Setup
-Some cameras require additional setup to work at all, or have some recommended additional settings.
 
-#### Arducam 12MP IMX708
-Although this camera uses the same chipset as the RPi Cam v3, there are still some hardware differences that will not allow for the Arducam version to be picked up automatically and instead needs an overlay to be enabled. In order to do this, switch to [RW mode](FAQ.md#how-can-i-enable-rw-mode) and add the following line to `/boot/firmware/config.txt`:
+Some third-party cameras are not picked up by the RPi's auto-detection and require a manual overlay. To set one up, switch to [RW mode](FAQ.md#how-can-i-enable-rw-mode) and edit `/boot/firmware/config.txt`:
 
-```
-dtoverlay=imx708
-```
+1. Disable auto-detection by changing the existing line to:
+    ```
+    camera_auto_detect=0
+    ```
+    This is required when using manual overlays. Leaving auto-detect enabled can cause conflicting kernel modules to be loaded, resulting in the camera not being recognized.
 
-Optionally change the existing line in `/boot/firmware/config.txt`:
-```
-autodetect=0
-```
+2. Add the overlay for your camera:
 
-After rebooting, make sure that the camera is picked up properly:
+    | Camera | Overlay |
+    |--------|---------|
+    | Arducam 12MP IMX708 | `dtoverlay=imx708` |
+    | OV5647 (Picamera V1.3) | `dtoverlay=ov5647` |
+    | IMX219 (Arducam 8MP, generic) | `dtoverlay=imx219` |
 
-```
-dmesg | grep imx708
-```
-
-This should show output similar to the following
-
-```
-[   12.173300] imx708 10-001a: camera module ID 0x0302
-```
+3. Reboot and verify the camera is detected:
+    ```
+    dmesg | grep -E "imx708|imx219"
+    ```
+    You should see output like:
+    ```
+    [   12.173300] imx708 10-001a: camera module ID 0x0302
+    ```
 
 !!! warning
     Do not forget to switch back to RO mode once you are done.
 
-#### OV5647 (Picamera V1.3, Bewinner)
+#### Camera notes
 
-This was the chip being used for the Picamera v1.3. Lots of generic options exist on Ali-Express. Generally speaking, IMX219 options will always be better than this one, so unless you already have one of those lying around, there is little upside of getting one of those.
-
-#### IMX219 (Arducam 8MP, generic Ali-Express options)
-
-> There are a lot of IMX219 based cameras you can find on Ali-Express for very little money.
-
-Although this camera uses the same chipset as the RPi Cam v2, there are still some hardware differences that will not allow for the Arducam version to be picked up automatically and instead needs an overlay to be enabled. In order to do this, switch to [RW mode](FAQ.md#how-can-i-enable-rw-mode) and add the following line to `/boot/firmware/config.txt`:
-
-```
-dtoverlay=imx219
-``` 
-Optionally change the existing line in `/boot/firmware/config.txt`:
-```
-autodetect=0
-```
+* **Arducam 12MP IMX708**: Same chipset as the RPi Cam v3 but with hardware differences that prevent auto-detection. Works out of the box once the overlay is set.
+* **OV5647 (Picamera V1.3, Bewinner)**: Works out of the box with auto-detection, but can also be set up with a manual overlay. Generally speaking, IMX219 options will always be better than this one, so unless you already have one lying around, there is little upside of getting one.
+* **IMX219 (Arducam 8MP, generic Ali-Express options)**: Same chipset as the RPi Cam v2 but needs a manual overlay. There are a lot of IMX219 based cameras on Ali-Express for very little money.
 ### Rotating Image
 If you can only mount your camera upside down, you can rotate the image by adding the following overlay in `/boot/firmware/config.txt` after changing [RW mode](FAQ.md#how-can-i-enable-rw-mode):
 
