@@ -73,6 +73,7 @@ nav:
     - SIM: SIM.md
     - Antennas: Antennas.md
     - GPS: GPS.md
+    - GPS Debug Reference: GPS-debug.md
     - UART: UART.md
     - Defaults: Defaults.md
   - Viewer:

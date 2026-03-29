@@ -15,7 +15,7 @@ V3XCTRL supports GPS for live position telemetry displayed in the viewer OSD (fi
 !!! warning
     If your GPS module is rated for 5V power, use 5V, not 3.3V. Running at 3.3V causes very poor signal quality (CN0 8-22 dBHz instead of the required 32+ dBHz) and the module will not get a reliable fix.
 
-Connect the GPS module to the Raspberry Pi GPIO header via UART:
+Connect the GPS module to the Raspberry Pi GPIO header via UART (see also the [Pinout](Pinout.md) page for a full pin diagram):
 
 | GPS pin | Pi pin | Pi GPIO |
 |---|---|---|
@@ -85,7 +85,7 @@ Prints fix type and coordinates as they update. Useful to confirm the module is 
 python -m v3xctrl_telemetry.apps.debug_gps
 ```
 
-Shows detailed per-satellite signal strength (CN0), RF health (AGC, jamming), antenna status, and warns about signal issues. See [GPS-Debug-Reference](GPS-Debug-Reference.md) for how to interpret the output.
+Shows detailed per-satellite signal strength (CN0), RF health (AGC, jamming), antenna status, and warns about signal issues. See [GPS Debug Reference](GPS-debug.md) for how to interpret the output.
 
 
 ## Fix Times
@@ -102,23 +102,4 @@ After a cold start the module downloads fresh satellite data from scratch. This 
 
 ## Troubleshooting
 
-### OSD shows "NO GPS"
-
-The GPS module is not communicating. Check:
-- UART is enabled (`/dev/serial0` exists)
-- Wiring is correct (TX/RX not swapped)
-- Module is powered (5V)
-- `path` in `config.json` matches the actual port
-
-### Satellite acquisition is slow or fails
-
-The LTE modem transmitting at high power (during video streaming) can interfere with GPS reception - the LTE bands overlap with the GPS L1 frequency (1575 MHz).
-
-If you are having trouble getting a fix, try running only `v3xctrl-control` without video until a fix is acquired, then start the full stream. This reduces LTE transmission and gives the GPS module a better chance to acquire satellites.
-
-### Fix acquired but then drops repeatedly
-
-Likely causes:
-- Obstructed sky view - move the antenna away from carbon fiber, metal, or other signal-blocking material
-- RF interference - check MON-RF jamming indicator with `debug_gps`
-- Weak power supply causing module resets - confirm stable 5V
+For GPS troubleshooting, see [Troubleshooting - GPS](Troubleshooting.md#gps).

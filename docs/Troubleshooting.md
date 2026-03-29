@@ -186,8 +186,30 @@ When you see the modem to connect, disconnect and re-enumerate in DMESG, it indi
 
 This might especially be a problem with the modem that comes with pogo pins. The best way to fix this is to remove the pogo pins and solder directly to the pads. This can be a bit finicky. Alternatively it can also help to tin the pads slightly.
 
-## GPS Module does not find Satellites
-If your GPS Modem can not find sattelites or the connection is unstable you may do some debuging about the signal/jammin/noise happening on your build. For details check [GPS-debug](https://wiki.v3xctrl.com/GPS-debug/)
+## GPS
+
+### OSD shows "NO GPS"
+
+The GPS module is not communicating. Check:
+
+- UART is enabled (`/dev/serial0` exists)
+- Wiring is correct (TX/RX not swapped)
+- Module is powered (5V)
+- GPS path in the config matches the actual port
+
+### Satellite acquisition is slow or fails
+
+The LTE modem transmitting at high power (during video streaming) can interfere with GPS reception -- the LTE bands overlap with the GPS L1 frequency (1575 MHz).
+
+If you are having trouble getting a fix, try running only `v3xctrl-control` without video until a fix is acquired, then start the full stream. This reduces LTE transmission and gives the GPS module a better chance to acquire satellites.
+
+### Fix acquired but then drops repeatedly
+
+Likely causes:
+
+- Obstructed sky view -- move the antenna away from carbon fiber, metal, or other signal-blocking material
+- RF interference -- check MON-RF jamming indicator with `debug_gps`. See the [GPS Debug Reference](GPS-debug.md) for how to interpret the output.
+- Weak power supply causing module resets -- confirm stable 5V
 
 ## Reverse SSH shell
 !!! warning
