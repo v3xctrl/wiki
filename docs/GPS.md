@@ -12,6 +12,9 @@ V3XCTRL supports GPS for live position telemetry displayed in the viewer OSD (fi
 
 ## Hardware Connection
 
+!!! warning
+    If your GPS module is rated for 5V power, use 5V, not 3.3V. Running at 3.3V causes very poor signal quality (CN0 8-22 dBHz instead of the required 32+ dBHz) and the module will not get a reliable fix.
+
 Connect the GPS module to the Raspberry Pi GPIO header via UART:
 
 | GPS pin | Pi pin | Pi GPIO |
@@ -21,27 +24,23 @@ Connect the GPS module to the Raspberry Pi GPIO header via UART:
 | TX | RX (pin 10) | GPIO 15 |
 | RX | TX (pin 8) | GPIO 14 |
 
-> **Important:** If your module is rated for 5V power use 5V, not 3.3V. Running at 3.3V causes very poor signal quality (CN0 8-22 dBHz instead of the required 32+ dBHz) and the module will not get a reliable fix.
+### Enable UART for GPS
 
+The serial port is enabled by default on the v3xctrl image, but a login shell (TTY) is spawned on it. This needs to be disabled to free up the port for GPS.
 
-### Enable UART on the Pi
-
-The serial port must be enabled before the GPS is accessible at `/dev/serial0`:
+Switch to [RW mode](FAQ.md#how-can-i-enable-rw-mode) and remove `console=serial0,115200` from `/boot/firmware/cmdline.txt`:
 
 ```bash
-sudo raspi-config
-# → Interface Options → Serial Port
-# → "Would you like a login shell over serial?" → No
-# → "Would you like the serial port hardware to be enabled?" → Yes
+sudo sed -i 's/console=serial0,115200 //g' /boot/firmware/cmdline.txt
 ```
 
-Or add this to `/boot/firmware/config.txt` manually:
+Reboot after making changes. You can verify the port is available with:
 
-```
-enable_uart=1
+```bash
+ls -l /dev/serial0
 ```
 
-Reboot after making changes.
+> To re-enable the serial console for debugging later, see [UART](UART.md).
 
 
 ## Configuration
