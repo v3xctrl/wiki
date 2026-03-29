@@ -26,13 +26,9 @@ Connect the GPS module to the Raspberry Pi GPIO header via UART:
 
 ### Enable UART for GPS
 
-The serial port is enabled by default on the v3xctrl image, but a login shell (TTY) is spawned on it. This needs to be disabled to free up the port for GPS.
+The serial port is enabled by default on the v3xctrl image and the serial login shell is disabled during first boot. If you have re-enabled the serial console for debugging (see [UART](UART.md)), you need to disable it again to free up the port for GPS.
 
-Switch to [RW mode](FAQ.md#how-can-i-enable-rw-mode) and remove `console=serial0,115200` from `/boot/firmware/cmdline.txt`:
-
-```bash
-sudo sed -i 's/console=serial0,115200 //g' /boot/firmware/cmdline.txt
-```
+Check `/boot/firmware/cmdline.txt` for `console=serial0,115200`. If it is present, switch to [RW mode](FAQ.md#how-can-i-enable-rw-mode) and edit the file with a text editor to remove it.
 
 Reboot after making changes. You can verify the port is available with:
 
