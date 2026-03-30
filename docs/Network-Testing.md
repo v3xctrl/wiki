@@ -170,7 +170,7 @@ python -m v3xctrl_self_test.viewer 9999
 
 Then on the streamer change into the self test directory and run the tests
 ```
-cd /opt/v3xctrl-venv/lib/python3.11/site-packages/v3xctrl_self_test/
+cd /opt/v3xctrl-venv/lib/python3.11/site-packages
 v3xctrl-python -m v3xctrl_self_test.streamer <VIEWER_IP> 9999
 ```
 

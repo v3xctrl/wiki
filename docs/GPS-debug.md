@@ -4,7 +4,8 @@ Reference values for interpreting output from `debug_gps.py` (u-blox M10, RushFP
 
 Run the script on the Pi:
 ```bash
-sudo /opt/v3xctrl-venv/bin/python3 -m v3xctrl_telemetry.apps.debug_gps
+cd /opt/v3xctrl-venv/lib/python3.11/site-packages
+v3xctrl-python -m v3xctrl_telemetry.apps.debug_gps
 ```
 
 > **Tip:** If satellite acquisition is slow during diagnosis, stop video streaming. LTE transmission can interfere with GPS reception at the L1 frequency (1575 MHz).

@@ -41,39 +41,29 @@ ls -l /dev/serial0
 
 ## Configuration
 
-GPS settings live in `config.json` under the `telemetry.gps` key:
+GPS settings can be configured through the streamer's web interface under the "_Config Editor_" tab in the "_Telemetry_" section.
 
 | Setting | Default | Description |
 |---|---|---|
 | `path` | `/dev/serial0` | Serial port the GPS module is connected to |
-| `protocol` | `ublox` | GPS module protocol - `ublox`, `nmea`, or `modem` |
-| `rateHz` | `5` | Output rate in Hz - used by `ublox`, ignored by other protocols for now |
-
-Example:
-
-```json
-"gps": {
-  "path": "/dev/serial0",
-  "rateHz": 5
-}
-```
+| `protocol` | `ublox` | GPS module protocol -- `ublox`, `nmea`, or `modem` |
+| `rateHz` | `5` | Output rate in Hz -- used by `ublox`, ignored by other protocols for now |
 
 On startup the `ublox` driver tries 115200 baud first, then falls back to 9600. The module is auto-configured to UBX protocol and the requested output rate.
 
 
 ## Testing
 
-Test GPS on the Pi with the diagnostic scripts. Run them via the v3xctrl venv:
+Test GPS on the Pi with the diagnostic scripts. First change to the v3xctrl package directory:
 
 ```bash
-sudo /opt/v3xctrl-venv/bin/python3 -m v3xctrl_telemetry.apps.read_gps
+cd /opt/v3xctrl-venv/lib/python3.11/site-packages
 ```
-
 
 ### Basic position readout
 
 ```bash
-python -m v3xctrl_telemetry.apps.read_gps
+v3xctrl-python -m v3xctrl_telemetry.apps.read_gps
 ```
 
 Prints fix type and coordinates as they update. Useful to confirm the module is working and a fix has been acquired.
@@ -82,7 +72,7 @@ Prints fix type and coordinates as they update. Useful to confirm the module is 
 ### Full diagnostics
 
 ```bash
-python -m v3xctrl_telemetry.apps.debug_gps
+v3xctrl-python -m v3xctrl_telemetry.apps.debug_gps
 ```
 
 Shows detailed per-satellite signal strength (CN0), RF health (AGC, jamming), antenna status, and warns about signal issues. See [GPS Debug Reference](GPS-debug.md) for how to interpret the output.
