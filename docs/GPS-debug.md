@@ -1,18 +1,18 @@
 # GPS Debug Reference
 
-Reference values for interpreting output from `debug_gps.py` (u-blox M10, RushFPV GNSS Mini).
+Reference values for interpreting output from `debug_gps_ublox.py` (u-blox modules only).
 
 Run the script on the Pi:
 ```bash
 cd /opt/v3xctrl-venv/lib/python3.11/site-packages
-v3xctrl-python -m v3xctrl_telemetry.apps.debug_gps
+v3xctrl-python -m v3xctrl_telemetry.apps.debug_gps_ublox
 ```
 
 > **Tip:** If satellite acquisition is slow during diagnosis, stop video streaming. LTE transmission can interfere with GPS reception at the L1 frequency (1575 MHz).
 
 On exit, the script prints a warning summary:
 ```
-[WARN] Stopped. Total warnings: 3
+Stopped. Total warnings: 3
 ```
 If no warnings occurred, nothing is printed.
 
@@ -20,14 +20,14 @@ If no warnings occurred, nothing is printed.
 
 ## NAV-PVT - Fix Type
 
-| Value | Name        | Meaning                                    |
-|-------|-------------|--------------------------------------------|
-| 0     | NO_FIX      | No position fix                            |
-| 1     | DR          | Dead reckoning only (no GNSS)              |
-| 2     | 2D          | 2D fix (altitude not determined)           |
-| 3     | 3D          | 3D fix - normal outdoor operation          |
-| 4     | GNSS+DR     | GNSS + dead reckoning combined             |
-| 5     | TIME_ONLY   | Time-only fix                              |
+| Value | Name                              | Meaning                                    |
+|-------|-----------------------------------|--------------------------------------------|
+| 0     | No Fix (`NO_FIX`)                 | No position fix                            |
+| 1     | Dead Reckoning (`DR`)             | Dead reckoning only (no GNSS)              |
+| 2     | 2D Fix (`2D`)                     | 2D fix (altitude not determined)           |
+| 3     | 3D Fix (`3D`)                     | 3D fix - normal outdoor operation          |
+| 4     | GNSS+Dead Reckoning (`GNSS+DR`)   | GNSS + dead reckoning combined             |
+| 5     | Time Only (`TIME_ONLY`)           | Time-only fix                              |
 
 **Expected:** `3D` in open sky. `NO_FIX` is normal during cold start (can take 30-60s).
 
@@ -93,25 +93,25 @@ The u-blox M10 can track up to 3 GNSS systems simultaneously.
 
 ## MON-RF - Antenna Status
 
-| Value | Name     | Meaning                                          |
-|-------|----------|--------------------------------------------------|
-| 0     | INIT     | Initializing                                     |
-| 1     | UNKN     | Status unknown                                   |
-| 2     | OK       | Antenna connected and working - normal           |
-| 3     | SHORT    | Antenna short circuit - check connector/cable    |
-| 4     | OPEN     | Antenna open circuit - check connector/cable     |
+| Value | Name                  | Meaning                                          |
+|-------|-----------------------|--------------------------------------------------|
+| 0     | Initializing (`INIT`) | Initializing                                     |
+| 1     | Unknown (`UNKN`)      | Status unknown                                   |
+| 2     | OK                    | Antenna connected and working - normal           |
+| 3     | Short (`SHORT`)       | Antenna short circuit - check connector/cable    |
+| 4     | Open (`OPEN`)         | Antenna open circuit - check connector/cable     |
 
-**Expected:** `OK`. `SHORT` or `OPEN` indicate a hardware problem.
+**Expected:** `OK`. `Short` or `Open` indicate a hardware problem.
 
 ---
 
 ## MON-RF - Antenna Power
 
-| Value | Name | Meaning                              |
-|-------|------|--------------------------------------|
-| 0     | OFF  | Antenna power off                    |
-| 1     | ON   | Antenna powered - normal             |
-| 2     | UNKN | Unknown                              |
+| Value | Name             | Meaning                              |
+|-------|------------------|--------------------------------------|
+| 0     | Off (`OFF`)      | Antenna power off                    |
+| 1     | On (`ON`)        | Antenna powered - normal             |
+| 2     | Unknown (`UNKN`) | Unknown                              |
 
 ---
 
@@ -136,14 +136,14 @@ Note: This indicator responds to narrow-band (CW) interference only.
 
 | Value | State    | Meaning                                             |
 |-------|----------|-----------------------------------------------------|
-| 0     | unknown  | Jamming detection not available                    |
-| 1     | ok       | No jamming detected - normal                       |
-| 2     | WARNING  | Jamming detected                                   |
-| 3     | CRITICAL | Strong jamming - position may be unreliable        |
+| 0     | Unknown  | Jamming detection not available                    |
+| 1     | OK       | No jamming detected - normal                       |
+| 2     | Warning  | Jamming detected                                   |
+| 3     | Critical | Strong jamming - position may be unreliable        |
 
 ---
 
-## MON-RF - AGC Count (`agcCnt`)
+## MON-RF - Gain (`agcCnt`)
 
 Automatic gain control counter. Reflects the receiver's gain adjustment to maintain signal levels.
 
@@ -172,23 +172,40 @@ Background RF noise measurement.
 ## Typical Healthy Output (open sky, 3D fix)
 
 ```
-NAV-PVT  fix=3D  sats=7  lat=48.123456  lon=11.567890  speed=0.0 km/h
-NAV-SAT  7 svs  | *GPS1 CN0=38 el=55 | *GPS3 CN0=32 el=22 | *GAL5 CN0=36 el=41 | ...
-MON-RF   ant=OK pwr=ON jam=4/255 state=ok agc=8190 noise=98
+[16:11:06.064] POSITION [NAV-PVT]  fix=3D Fix  satellites=7  lat=48.123456  lon=11.567890  speed=0.0 km/h
+[16:11:06.116] SATELLITES [NAV-SAT]  7 used / 24 visible
+               used:        GPS1(38dBHz 55°)  GPS3(32dBHz 22°)  GAL5(36dBHz 41°)  ...
+               seen:        17 satellites
+[16:11:06.245] RF-STATUS [MON-RF]  antenna=OK power=On jamming=4/255 state=OK gain=8190 noise=98
 ```
-
-In NAV-SAT, satellites prefixed with `*` are actively used in the navigation solution. Satellites without `*` are tracked but not contributing to the fix (low signal, wrong elevation, or unhealthy).
 
 ---
 
 ## Typical Output During Satellite Drop
 
 ```
-NAV-PVT  fix=3D  sats=4  lat=...
-NAV-PVT  fix=NO_FIX  sats=0  lat=--  lon=--  speed=--
-[WARN] sats dropped 4 -> 0
-NAV-SAT  0 svs  |
-MON-RF   ant=OK pwr=ON jam=?/255 state=ok agc=? noise=?
+[16:11:05.064] POSITION [NAV-PVT]  fix=3D Fix  satellites=4  lat=48.123456  lon=11.567890  speed=1.2 km/h
+[16:11:06.064] POSITION [NAV-PVT]  fix=No Fix  satellites=0  lat=--  lon=--  speed=--
+[WARN] satellites dropped 4 -> 0
+[16:11:06.116] SATELLITES [NAV-SAT]  0 used / 0 visible
+               used:        (none)
+[16:11:06.245] RF-STATUS [MON-RF]  antenna=OK power=On jamming=5/255 state=OK gain=8190 noise=100
 ```
 
-If `ant=OK` and `jam` is low during a drop, the cause is likely signal obstruction, LTE interference, or a brief module reset - not an antenna or RF hardware problem.
+If `antenna=OK` and `jamming` is low during a drop, the cause is likely signal obstruction, LTE interference, or a brief module reset - not an antenna or RF hardware problem.
+
+---
+
+## Warnings
+
+All warnings are prefixed with `[WARN]` and included in the exit summary count.
+
+| Warning | Meaning |
+|---------|---------|
+| `satellites dropped N -> M` | Satellite count dropped by 2 or more in one cycle |
+| `N used satellite(s) below signal threshold (25dBHz)` | N satellites used for position have weak CN0 |
+| `No fix - strongest visible satellite only NdBHz, below acquisition threshold (25dBHz) for ephemeris/almanac data` | No fix and visible satellites too weak to download navigation data |
+| `Antenna status: Short/Open` | Hardware problem - check connector and cable |
+| `Jamming indicator high: N/255` | Jamming indicator above threshold (50) |
+| `Jamming state: Warning/Critical` | Module flagged active jamming |
+| `unexpected fixType=N` | Unknown fix type reported by module |
