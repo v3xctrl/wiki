@@ -1,14 +1,9 @@
 # GPS Debug Reference
 
-Reference values for interpreting output from `debug_gps_ublox.py` (u-blox modules only).
-
-!!! info
-    This is a debug reference only. The GPS module handles all satellite selection,
-    signal thresholds, and fix decisions automatically - these values cannot be manually configured.
+Reference for interpreting output from debug_gps_ublox.py (u-blox modules only). The GPS module handles all satellite selection and fix decisions automatically - these values reflect module state, not configurable settings.
 
 Run the script on the Streamer:
 ```bash
-cd /opt/v3xctrl-venv/lib/python3.11/site-packages
 v3xctrl-python -m v3xctrl_telemetry.apps.debug_gps_ublox
 ```
 
@@ -45,7 +40,7 @@ Reports the current position fix, satellite count, coordinates, and speed.
 
 ## NAV-SAT - Navigation Satellites
 
-Per-satellite signal data for all satellites the module can see. Satellites are grouped as `used:` (actively contributing to the position fix), `seen:` (visible but not used), and `unhealthy:` (flagged by the module as unreliable and excluded from position calculation). The module can track up to 3 systems simultaneously: GPS, SBAS, Galileo, BeiDou, IMES, QZSS, GLONASS.
+Per-satellite signal data for all satellites the module can see. Satellites are grouped as `used:` (actively contributing to the position fix), `seen:` (visible but not used), and `unhealthy:` (flagged by the module as unreliable and excluded from position calculation). The module supports GPS, SBAS, Galileo, BeiDou, IMES, QZSS, and GLONASS, and can track up to 3 systems simultaneously.
 
 ### Signal Strength (CN0, dBHz)
 
@@ -85,21 +80,17 @@ Continuous-wave jamming indicator. Scale: 0-255.
 
 **Warning threshold:** > 50.
 
+The module also reports a jamming state: `OK` means no jamming detected, `Warning` means jamming detected, `Critical` means strong jamming - position may be unreliable. `Unknown` means jamming detection is not available on this module.
+
 Note: This indicator responds to narrow-band (CW) interference only.
-
-### Jamming State
-
-Expected: `OK` - no jamming. `Warning` means jamming detected. `Critical` means strong jamming - position may be unreliable. `Unknown` means jamming detection is not available on this module.
 
 ### Gain
 
-Automatic gain control counter. Reflects the receiver's gain adjustment to maintain signal levels.
+Automatic gain control counter (scale: 0-8191). Reflects the receiver's gain adjustment to maintain signal levels. The baseline varies depending on antenna type, placement, and environment, so there is no universal threshold. Watch for sudden changes rather than absolute values.
 
 - **Stable** - normal RF environment
 - **Sudden drop** - increased noise floor, possible wideband interference
 - **Very low** - strong signal or close jamming source
-
-No fixed threshold - watch for sudden changes relative to baseline.
 
 ### Noise per ms
 
