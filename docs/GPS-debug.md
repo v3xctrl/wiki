@@ -16,8 +16,6 @@ Stopped. Total warnings: 3
 ```
 If no warnings occurred, nothing is printed.
 
----
-
 ## NAV-PVT - Fix Type
 
 | Value | Name                              | Meaning                                    |
@@ -31,8 +29,6 @@ If no warnings occurred, nothing is printed.
 
 **Expected:** `3D` in open sky. `NO_FIX` is normal during cold start (can take 30-60s).
 
----
-
 ## NAV-PVT - Satellite Count (`numSV`)
 
 | Count | Assessment                                              |
@@ -43,8 +39,6 @@ If no warnings occurred, nothing is printed.
 | 7+    | Excellent                                              |
 
 **Warning threshold:** Drop of 2 or more satellites in one cycle is flagged.
-
----
 
 ## NAV-SAT - Signal Strength (CN0, dBHz)
 
@@ -63,8 +57,6 @@ Carrier-to-noise density ratio per satellite. Higher is better.
 
 Minimum to decode navigation data from a satellite: ~32 dBHz.
 
----
-
 ## NAV-SAT - Satellite Health
 
 | Value | Meaning                  |
@@ -72,8 +64,6 @@ Minimum to decode navigation data from a satellite: ~32 dBHz.
 | 0     | Unknown                  |
 | 1     | Healthy - normal         |
 | 2     | Unhealthy - ignore data  |
-
----
 
 ## NAV-SAT - GNSS System IDs
 
@@ -89,8 +79,6 @@ Minimum to decode navigation data from a satellite: ~32 dBHz.
 
 The u-blox M10 can track up to 3 GNSS systems simultaneously.
 
----
-
 ## MON-RF - Antenna Status
 
 | Value | Name                  | Meaning                                          |
@@ -103,8 +91,6 @@ The u-blox M10 can track up to 3 GNSS systems simultaneously.
 
 **Expected:** `OK`. `Short` or `Open` indicate a hardware problem.
 
----
-
 ## MON-RF - Antenna Power
 
 | Value | Name             | Meaning                              |
@@ -112,8 +98,6 @@ The u-blox M10 can track up to 3 GNSS systems simultaneously.
 | 0     | Off (`OFF`)      | Antenna power off                    |
 | 1     | On (`ON`)        | Antenna powered - normal             |
 | 2     | Unknown (`UNKN`) | Unknown                              |
-
----
 
 ## MON-RF - Jamming Indicator (`jamInd`)
 
@@ -130,8 +114,6 @@ Continuous-wave jamming indicator. Scale: 0-255.
 
 Note: This indicator responds to narrow-band (CW) interference only.
 
----
-
 ## MON-RF - Jamming State (flags bits 0-1)
 
 | Value | State    | Meaning                                             |
@@ -140,8 +122,6 @@ Note: This indicator responds to narrow-band (CW) interference only.
 | 1     | OK       | No jamming detected - normal                       |
 | 2     | Warning  | Jamming detected                                   |
 | 3     | Critical | Strong jamming - position may be unreliable        |
-
----
 
 ## MON-RF - Gain (`agcCnt`)
 
@@ -155,8 +135,6 @@ Automatic gain control counter. Reflects the receiver's gain adjustment to maint
 
 No fixed threshold - watch for sudden changes relative to baseline.
 
----
-
 ## MON-RF - Noise per ms (`noisePerMS`)
 
 Background RF noise measurement.
@@ -166,8 +144,6 @@ Background RF noise measurement.
 | 80-120     | Normal outdoor environment          |
 | > 150      | Elevated noise - possible interference |
 | > 200      | High noise - likely RF issues nearby |
-
----
 
 ## Typical Healthy Output (open sky, 3D fix)
 
@@ -179,8 +155,6 @@ Background RF noise measurement.
 [16:11:06.245] RF-STATUS [MON-RF]  antenna=OK power=On jamming=4/255 state=OK gain=8190 noise=98
 ```
 
----
-
 ## Typical Output During Satellite Drop
 
 ```
@@ -191,10 +165,9 @@ Background RF noise measurement.
                used:        (none)
 [16:11:06.245] RF-STATUS [MON-RF]  antenna=OK power=On jamming=5/255 state=OK gain=8190 noise=100
 ```
+Each satellite in the used: and unhealthy: groups is shown as {SYSTEM}{ID}({CN0}dBHz {elevation}°). For example, GPS1(38dBHz 55°) is GPS satellite 1 with a signal strength of 38 dBHz at 55° above the horizon. Higher elevation generally means better signal.
 
 If `antenna=OK` and `jamming` is low during a drop, the cause is likely signal obstruction, LTE interference, or a brief module reset - not an antenna or RF hardware problem.
-
----
 
 ## Warnings
 
