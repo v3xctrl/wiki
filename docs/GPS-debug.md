@@ -2,7 +2,11 @@
 
 Reference values for interpreting output from `debug_gps_ublox.py` (u-blox modules only).
 
-Run the script on the Pi:
+!!! info
+    This is a debug reference only. The GPS module handles all satellite selection,
+    signal thresholds, and fix decisions automatically - these values cannot be manually configured.
+
+Run the script on the Streamer:
 ```bash
 cd /opt/v3xctrl-venv/lib/python3.11/site-packages
 v3xctrl-python -m v3xctrl_telemetry.apps.debug_gps_ublox
@@ -10,26 +14,25 @@ v3xctrl-python -m v3xctrl_telemetry.apps.debug_gps_ublox
 
 > **Tip:** If satellite acquisition is slow during diagnosis, stop video streaming. LTE transmission can interfere with GPS reception at the L1 frequency (1575 MHz).
 
-On exit, the script prints a warning summary:
-```
-Stopped. Total warnings: 3
-```
-If no warnings occurred, nothing is printed.
 
-## NAV-PVT - Fix Type
+## NAV-PVT - Navigation Position, Velocity and Time
 
-| Value | Name                              | Meaning                                    |
-|-------|-----------------------------------|--------------------------------------------|
-| 0     | No Fix (`NO_FIX`)                 | No position fix                            |
-| 1     | Dead Reckoning (`DR`)             | Dead reckoning only (no GNSS)              |
-| 2     | 2D Fix (`2D`)                     | 2D fix (altitude not determined)           |
-| 3     | 3D Fix (`3D`)                     | 3D fix - normal outdoor operation          |
-| 4     | GNSS+Dead Reckoning (`GNSS+DR`)   | GNSS + dead reckoning combined             |
-| 5     | Time Only (`TIME_ONLY`)           | Time-only fix                              |
+Reports the current position fix, satellite count, coordinates, and speed.
 
-**Expected:** `3D` in open sky. `NO_FIX` is normal during cold start (can take 30-60s).
+### Fix Type
 
-## NAV-PVT - Satellite Count (`numSV`)
+| Fix Type              | Meaning                                                           |
+|-----------------------|-------------------------------------------------------------------|
+| No Fix                | No position fix - normal during cold start (up to 60s)           |
+| Dead Reckoning        | Position estimated from motion sensors; no GNSS signal available |
+| 2D Fix                | Horizontal position only - altitude not determined               |
+| 3D Fix                | Full position fix - normal outdoor operation                     |
+| GNSS+Dead Reckoning   | GNSS combined with motion sensor data                            |
+| Time Only             | Time synchronized but no position fix                            |
+
+**Expected:** `3D Fix` in open sky. `No Fix` is normal during cold start (up to 60s). Weak signal, jamming, or obstructions can significantly delay acquisition.
+
+### Satellite Count (`satellites`)
 
 | Count | Assessment                                              |
 |-------|---------------------------------------------------------|
@@ -40,7 +43,11 @@ If no warnings occurred, nothing is printed.
 
 **Warning threshold:** Drop of 2 or more satellites in one cycle is flagged.
 
-## NAV-SAT - Signal Strength (CN0, dBHz)
+## NAV-SAT - Navigation Satellites
+
+Per-satellite signal data for all satellites the module can see. Satellites are grouped as `used:` (actively contributing to the position fix), `seen:` (visible but not used), and `unhealthy:` (flagged by the module as unreliable and excluded from position calculation). The module can track up to 3 systems simultaneously: GPS, SBAS, Galileo, BeiDou, IMES, QZSS, GLONASS.
+
+### Signal Strength (CN0, dBHz)
 
 Carrier-to-noise density ratio per satellite. Higher is better.
 
@@ -57,53 +64,19 @@ Carrier-to-noise density ratio per satellite. Higher is better.
 
 Minimum to decode navigation data from a satellite: ~32 dBHz.
 
-## NAV-SAT - Satellite Health
+## MON-RF - RF Monitor
 
-| Value | Meaning                  |
-|-------|--------------------------|
-| 0     | Unknown                  |
-| 1     | Healthy - normal         |
-| 2     | Unhealthy - ignore data  |
+Antenna status and RF interference data reported by the module.
 
-## NAV-SAT - GNSS System IDs
+### Antenna Status
 
-| ID | System  |
-|----|---------|
-| 0  | GPS     |
-| 1  | SBAS    |
-| 2  | Galileo |
-| 3  | BeiDou  |
-| 4  | IMES    |
-| 5  | QZSS    |
-| 6  | GLONASS |
+Expected: `OK power=On` - antenna connected and powered. `Short` or `Open` indicate a hardware problem - check the connector and cable. `Unknown` is normal for passive antennas (the module cannot detect passive antenna presence). `Initializing` appears briefly on startup.
 
-The u-blox M10 can track up to 3 GNSS systems simultaneously.
-
-## MON-RF - Antenna Status
-
-| Value | Name                  | Meaning                                          |
-|-------|-----------------------|--------------------------------------------------|
-| 0     | Initializing (`INIT`) | Initializing                                     |
-| 1     | Unknown (`UNKN`)      | Status unknown                                   |
-| 2     | OK                    | Antenna connected and working - normal           |
-| 3     | Short (`SHORT`)       | Antenna short circuit - check connector/cable    |
-| 4     | Open (`OPEN`)         | Antenna open circuit - check connector/cable     |
-
-**Expected:** `OK`. `Short` or `Open` indicate a hardware problem.
-
-## MON-RF - Antenna Power
-
-| Value | Name             | Meaning                              |
-|-------|------------------|--------------------------------------|
-| 0     | Off (`OFF`)      | Antenna power off                    |
-| 1     | On (`ON`)        | Antenna powered - normal             |
-| 2     | Unknown (`UNKN`) | Unknown                              |
-
-## MON-RF - Jamming Indicator (`jamInd`)
+### Jamming Indicator
 
 Continuous-wave jamming indicator. Scale: 0-255.
 
-| jamInd | Assessment                                              |
+| jamming | Assessment                                             |
 |--------|---------------------------------------------------------|
 | 0-20   | No jamming                                             |
 | 21-50  | Low - likely normal variation                          |
@@ -114,38 +87,33 @@ Continuous-wave jamming indicator. Scale: 0-255.
 
 Note: This indicator responds to narrow-band (CW) interference only.
 
-## MON-RF - Jamming State (flags bits 0-1)
+### Jamming State
 
-| Value | State    | Meaning                                             |
-|-------|----------|-----------------------------------------------------|
-| 0     | Unknown  | Jamming detection not available                    |
-| 1     | OK       | No jamming detected - normal                       |
-| 2     | Warning  | Jamming detected                                   |
-| 3     | Critical | Strong jamming - position may be unreliable        |
+Expected: `OK` - no jamming. `Warning` means jamming detected. `Critical` means strong jamming - position may be unreliable. `Unknown` means jamming detection is not available on this module.
 
-## MON-RF - Gain (`agcCnt`)
+### Gain
 
 Automatic gain control counter. Reflects the receiver's gain adjustment to maintain signal levels.
 
-| Behavior          | Possible cause                                     |
-|-------------------|----------------------------------------------------|
-| Stable            | Normal RF environment                              |
-| Sudden drop       | Increased noise floor - possible wideband interference |
-| Very low          | Strong signal or close jamming source             |
+- **Stable** - normal RF environment
+- **Sudden drop** - increased noise floor, possible wideband interference
+- **Very low** - strong signal or close jamming source
 
 No fixed threshold - watch for sudden changes relative to baseline.
 
-## MON-RF - Noise per ms (`noisePerMS`)
+### Noise per ms
 
 Background RF noise measurement.
 
-| noisePerMS | Assessment                          |
-|------------|-------------------------------------|
+| noise | Assessment                               |
+|-------|------------------------------------------|
 | 80-120     | Normal outdoor environment          |
 | > 150      | Elevated noise - possible interference |
 | > 200      | High noise - likely RF issues nearby |
 
 ## Typical Healthy Output (open sky, 3D fix)
+
+Each satellite in the `used:` and `unhealthy:` groups is shown as `{SYSTEM}{ID}({CN0}dBHz {elevation}°)`. For example, `GPS1(38dBHz 55°)` is GPS satellite 1 with a signal strength of 38 dBHz at 55° above the horizon. Higher elevation generally means better signal.
 
 ```
 [16:11:06.064] POSITION [NAV-PVT]  fix=3D Fix  satellites=7  lat=48.123456  lon=11.567890  speed=0.0 km/h
@@ -165,13 +133,12 @@ Background RF noise measurement.
                used:        (none)
 [16:11:06.245] RF-STATUS [MON-RF]  antenna=OK power=On jamming=5/255 state=OK gain=8190 noise=100
 ```
-Each satellite in the used: and unhealthy: groups is shown as {SYSTEM}{ID}({CN0}dBHz {elevation}°). For example, GPS1(38dBHz 55°) is GPS satellite 1 with a signal strength of 38 dBHz at 55° above the horizon. Higher elevation generally means better signal.
 
 If `antenna=OK` and `jamming` is low during a drop, the cause is likely signal obstruction, LTE interference, or a brief module reset - not an antenna or RF hardware problem.
 
 ## Warnings
 
-All warnings are prefixed with `[WARN]` and included in the exit summary count.
+All warnings are prefixed with `[WARN]`.
 
 | Warning | Meaning |
 |---------|---------|
@@ -182,3 +149,5 @@ All warnings are prefixed with `[WARN]` and included in the exit summary count.
 | `Jamming indicator high: N/255` | Jamming indicator above threshold (50) |
 | `Jamming state: Warning/Critical` | Module flagged active jamming |
 | `unexpected fixType=N` | Unknown fix type reported by module |
+
+For full protocol details, see the [u-blox M10 Interface Description](https://www.u-blox.com/docs/UBX-21035062).
