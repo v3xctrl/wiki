@@ -102,6 +102,23 @@ Both UDP and TCP transport are supported. If your carrier blocks UDP, switch to 
 * Inverted controls support
 * Spectator mode
 
+### Performance
+
+30 FPS works on essentially any Android phone -- all devices from the last 5+ years have hardware-accelerated H.264 decoding.
+
+60 FPS works on high-end and most mid-tier phones. If you experience frame drops at 60 FPS, try enabling your device's gaming/performance mode. This prevents the OS from throttling CPU and GPU clocks and prioritizes the app's resource usage.
+
+| Brand | Feature | Where to find it |
+|-------|---------|-----------------|
+| Samsung | Game Booster | Settings > Advanced features > Game Launcher |
+| Xiaomi/Redmi | Game Turbo | Settings > Special features > Game Turbo |
+| OnePlus | Game Mode | Settings > Utilities > Game Mode |
+| Stock Android / Nothing | Game Dashboard | Settings > Apps > Game Settings (swipe from left edge in-game) |
+| Google Pixel | Game Dashboard | Settings > Apps > Game Settings |
+| OPPO/Realme | Game Space | Settings > Special Features > Game Space |
+| Vivo/iQOO | Ultra Game Mode | Settings > Ultra Game Mode |
+| Huawei/HarmonyOS | GameCenter | Separate app from AppGallery |
+
 ### Known limitations
 
 * Relay connection only (no direct mode)
