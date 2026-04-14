@@ -1,9 +1,9 @@
 By default the viewer uses **PyAV** as video receiver backend. This works cross platform and can be easily bundled.
 
 A GStreamer backend is also available but the user has to make sure that all the dependencies are installed on their system and the viewer has to be run from source ([follow the developer setup](Development.md#viewer) to do so).
-The viewer checks for those dependencies on startup and will notify you if they are satisfied, you will then see a log like this during startup:
+The viewer checks for GStreamer dependencies on startup. If they are available, GStreamer will be used automatically as the preferred backend. You will see this in the startup log:
 
-> GStreamer receiver available. Set video.receiver = "gst" in settings to use it.
+> GStreamer receiver available, will be used by default
 
 ## Installation
 The installation differs depending on your operating system

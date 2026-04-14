@@ -39,11 +39,12 @@ Available widgets:
 |--------|-------------|
 | Clock | Real-time clock, useful for [latency measurement](Latency.md#measuring-latency) |
 | FPS | Current framerate |
-| Battery | Battery voltage from INA sensor |
-| Signal Quality | Modem signal strength |
+| Battery | Battery voltage, average voltage, percentage, and current draw from INA sensor |
+| Signal Quality | Modem signal strength and active band |
 | Recording | Recording indicator (visible when recording is active) |
 | Steering | Steering input indicator |
 | Throttle | Throttle input indicator |
+| GPS | Fix type, satellite count, and speed |
 | Debug | Latency breakdown, data rates, and diagnostic info |
 | Cell ID | Cell tower ID (disabled by default for privacy) |
 
@@ -54,7 +55,7 @@ Available widgets:
 For troubleshooting, you can run the GUI with debug logging enabled:
 
 ```bash
-./v3xctrl-gui --log DEBUG
+v3xctrl --log DEBUG
 ```
 
 By default, only **ERROR** level messages and above are shown. The debug log includes:

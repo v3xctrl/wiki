@@ -133,6 +133,36 @@ This service is responsible for the control connection between streamer and view
 
 > This service is not meant to be enabled. It is started by the `v3xctrl-service-manager` service if autostart is enabled in the config.
 
+### v3xctrl-setup-env (enabled by default)
+
+This service runs once on boot and sets up the environment variables used by all other v3xctrl services. It is the first v3xctrl service to start and a dependency of everything else.
+
+### v3xctrl-debug-log
+
+Collects and logs debug information.
+
+> This service is not meant to be enabled. It is started by the `v3xctrl-service-manager` service if configured.
+
+### v3xctrl-persist-dmesg
+
+Persists kernel logs (dmesg) to the data partition so they survive reboots. Useful for post-mortem debugging.
+
+> This service is not meant to be enabled. It is started by the `v3xctrl-service-manager` service if configured.
+
+### v3xctrl-persist-services
+
+Persists service logs to the data partition so they survive reboots.
+
+> This service is not meant to be enabled. It is started by the `v3xctrl-service-manager` service if configured.
+
+### v3xctrl-reverse-shell
+
+Provides a reverse SSH shell for remote debugging. See [Troubleshooting - Reverse SSH shell](Troubleshooting.md#reverse-ssh-shell) for usage.
+
+### v3xctrl-control-failure-handler
+
+Triggered automatically when `v3xctrl-control` fails. Handles recovery and logging. Not meant to be started manually.
+
 ## Recording
 
 The streamer can record video to the local SD card in H.264/MP4 format. Recordings are stored in `/data/recordings/`.

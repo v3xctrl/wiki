@@ -24,6 +24,20 @@ Example for CAT1-GPS:
 |----------|------------|
 | CAT1-GPS | AT*BAND=5,0,0,482,149,1,1,0 |
 
+### CLI Tools
+
+The following commands are available on the streamer for modem management:
+
+| Command | Description |
+|---------|-------------|
+| `v3xctrl-modem-info` | Query modem status (version, SIM, bands, operator, IP contexts) |
+| `v3xctrl-modem-reset` | Factory reset modem and restore default bands for the configured model |
+| `v3xctrl-get-bands` | Show currently allowed LTE bands |
+| `v3xctrl-set-bands <bands>` | Restrict modem to specific LTE bands (e.g. `v3xctrl-set-bands 1,3,7,20`) |
+| `v3xctrl-modem-reset-bands` | Reset bands to factory defaults for the configured modem model |
+
+> These commands read the modem serial path and model from the active configuration. They can be run while the control service is stopped.
+
 ### Debugging
 
 > Before attempting any debugging, make sure your SIM card is set up correctly. See [SIM card preparation](SIM.md) and the [Troubleshooting modem section](Troubleshooting.md#modem) for common issues.

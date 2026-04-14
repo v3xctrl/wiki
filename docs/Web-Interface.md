@@ -1,5 +1,7 @@
 After installation on the streamer there will be a web interface available at `http://192.168.1.89` - change the IP to the IP of your streamer.
 
+A Swagger UI with the full API documentation is available at `/swagger` (e.g. `http://192.168.1.89/swagger`).
+
 ## Config Editor
 The `Config Editor` should be pretty self-explanatory. The one setting you will have to change is the host.
 

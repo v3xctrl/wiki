@@ -66,7 +66,7 @@ Waiting → Connected → Disconnected → Waiting
 Each transition is event-based, and these events can be subscribed to in order to perform custom actions.
 
 Example:
-If a failsafe timeout is set to 1000ms (1 second), and no data is received during that time:
+If a failsafe timeout is set to 500ms (the default), and no data is received during that time:
 1. The system marks the receiver as Disconnected
 2. A Disconnect event is fired
 3. The Failsafe action is executed

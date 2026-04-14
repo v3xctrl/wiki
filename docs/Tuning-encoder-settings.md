@@ -31,8 +31,8 @@ We start with the default values:
 * I-frame Interval: 15
 * Bitrate: 1.8Mbps
 * Min QP: 20
-* Max QP: 44
-* Max I-frame bytes: 40960
+* Max QP: 51
+* Max I-frame bytes: 25600
 
 The bandwidth test shows close to maximum LTE performance:
 ```
@@ -40,7 +40,7 @@ The bandwidth test shows close to maximum LTE performance:
 ```
 I know that this is just the case because it is late in the evening but even during the day tests show that it does never drop below 4Mbps, so I set the `Bitrate` to 4.0Mbps. That is an increase of 2.2x.
 
-I drop `Min QP` to 1 and set `Maximum I-frame bytes` to about 2.2x it's default size so `90112` (88KB). I check `Enable auto adjusting I-frame size` and leave the rest as it is. Since I am going slowly, I considered to increase `I-frame period` to 30, but I'll leave it at 15 for now.
+I drop `Min QP` to 1 and set `Maximum I-frame bytes` to about 2.2x its default size so `90112` (88KB). I check `Enable auto adjusting I-frame size` and leave the rest as it is. Since I am going slowly, I considered to increase `I-frame period` to 30, but I'll leave it at 15 for now.
 
 I set `Log Level` to `DEBUG`.
 
