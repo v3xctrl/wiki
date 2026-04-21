@@ -12,6 +12,12 @@ Most issues should be caught by the extensive test suite, a manual check should 
 
 #### Desktop
 
+##### Basics
+
+* [ ] Starts
+* [ ] Displays Name and Version in The Window bar
+* [ ] Shuts down properly via X
+
 ##### Menu
 
 * [ ] Can open menu
@@ -30,13 +36,18 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Input: Shows axis input for calibrated gamepad
 * [ ] OSD: elements can be enabled/disabled
 * [ ] OSD: Setting changes are visible without restart
+* [ ] Network: Direct connection host and port settings apply after save
 * [ ] Network: Toggling "Use UDP Relay" checkbox reconnects on "Save" and Back
 * [ ] Network: Spectator Mode connects with valid spectator ID
+* [ ] Network: Transport switching (UDP/TCP) works
+* [ ] Frequencies: Changing control update Hz applies correctly
+* [ ] Frequencies: Changing main loop FPS applies correctly
 * [ ] Streamer: Can start/stop video
 * [ ] Streamer: Can reboot streamer
 * [ ] Streamer: Can shutdown streamer
 * [ ] Streamer: Can start/stop recording via hotkey
 * [ ] Streamer: Can start/stop recording via button on gamepad
+* [ ] Streamer: Reverse shell toggle works
 * [ ] Quit button stops the viewer
 
 ##### Main screen
@@ -48,7 +59,11 @@ Most issues should be caught by the extensive test suite, a manual check should 
 * [ ] Steering widget updates on input
 * [ ] Debug widgets are updating correctly
 * [ ] Reception widget is updating correctly
+* [ ] Signal band widget is updating correctly
 * [ ] Battery widget is updating correctly
+* [ ] GPS widgets are updating correctly (fix, satellites, speed)
+* [ ] Clock widget is displayed
+* [ ] Cell ID widget is updating correctly
 * [ ] Toggling fullscreen with ++f11++ works
 * [ ] Fullscreen setting remembered between restarts
 * [ ] Saving settings is working (settings are reloaded after viewer restart)
@@ -65,40 +80,123 @@ Most issues should be caught by the extensive test suite, a manual check should 
 
 #### Android
 
+##### Basics
+
 * [ ] Can open app
 * [ ] Shows warning without session ID
 * [ ] Connects with valid session ID
 * [ ] Shows error with invalid session ID
+* [ ] Disconnect works
+
+##### Portrait Mode
+
 * [ ] Allows starting/stopping video from portrait mode
 * [ ] Allows starting/stopping recording from portrait mode
 * [ ] Shuts down from portrait mode
 * [ ] Reboots from portrait mode
-* [ ] Shows latency mode in portrait mode
+* [ ] Shows latency in portrait mode
 * [ ] Shows battery voltage in portrait mode
 * [ ] Shows signal reception in portrait mode
+* [ ] Shows GPS info in portrait mode
+* [ ] Shows recording indicator in portrait mode
+
+##### Landscape Mode
+
 * [ ] Shows image in landscape mode
 * [ ] Shows battery info in landscape mode
 * [ ] Shows signal info in landscape mode
+* [ ] Shows GPS info in landscape mode
+* [ ] Shows latency/debug info in landscape mode
+* [ ] Shows recording indicator when recording is active
+
+##### Controls
+
 * [ ] Touch control works
 * [ ] Motion control works
+* [ ] Inverted controls work
 * [ ] Pairing gamepad works
 * [ ] Control via gamepad works
+
+##### Features
+
 * [ ] OSD elements are shown based on toggled settings
+* [ ] Picture-in-Picture mode works
+* [ ] Spectator mode connects and shows video
+* [ ] UDP/TCP transport switching works
 * [ ] No signal/video is shown when control/video channel are lost
-* [ ] Disconnect works
+
+##### Edge Cases
+
+* [ ] App survives backgrounding and foregrounding
+* [ ] App reconnects after temporary network loss
 
 ### Streamer
 
-* [ ] Web interface is accessible in Client mode
+##### Basics
+
+* [ ] Image can be flashed
+* [ ] Firstboot script runs
+* [ ] Data partition is properly set up
+* [ ] Shows RO state on login via SSH
+* [ ] Shows connection info on login via SSH
+* [ ] Remounting to RW works (disables overlay FS and remounts /root/firmware as RW)
+* [ ] Remounting to RO works (reverse from above)
+
+##### Networking
+
 * [ ] Streamer starts in AP mode when no known Host WiFi is nearby
 * [ ] Web interface is accessible in AP mode
+* [ ] Web interface is accessible in Client mode
+* [ ] Swagger UI is accessible at /swagger
+
+##### Services
+
 * [ ] Control service autostarts by default
 * [ ] Video service autostarts when configured to do so
 * [ ] Settings are saved between reboots
-* [ ] Remounting to RW works (disables overlay FS and remounts /root/firmware as RW)
-* [ ] Remounting to RO works (reverse from above)
-* [ ] Shows RO state on login via SSH
-* [ ] Shows connection info on login via SSH
+* [ ] Debug-log service starts when configured
+* [ ] Persist-dmesg service starts when configured
+* [ ] Persist-services service starts when configured
+* [ ] Reverse shell connects when configured
+
+##### Web Interface
+
+* [ ] Config editor loads current configuration
+* [ ] Config editor saves changes (reboot required notice shown)
+* [ ] Services tab shows correct status for all services
+* [ ] Services tab can start/stop services
+* [ ] Services tab shows logs
+* [ ] Calibration tab detects PWM channels
+* [ ] Calibration tab can calibrate steering and throttle
+* [ ] DMESG tab shows kernel logs
+* [ ] Modem tab shows SIM status
+* [ ] Modem tab shows allowed bands
+* [ ] Camera settings can be adjusted live
+
+##### Video
+
+* [ ] Video works with test source
+* [ ] Video works with real camera
+* [ ] Auto-recording starts when configured
+* [ ] Manual recording via viewer works
+* [ ] Recording files are accessible via Samba
+* [ ] Recording files are accessible via SSH
+
+##### Telemetry
+
+* [ ] Battery/INA voltage is reported to viewer
+* [ ] Modem signal quality is reported to viewer
+* [ ] GPS telemetry is reported to viewer (when module connected)
+
+##### Control
+
+* [ ] Failsafe triggers when viewer disconnects
+* [ ] Control failure handler runs on control service crash
+
+##### Edge Cases
+
+* [ ] Filesystem integrity after power loss (RO filesystem)
+* [ ] Modem reconnects after temporary signal loss
 
 ### Relay Testing
 * Make sure, viewer, streamer and spectator all connect from the same IP.
