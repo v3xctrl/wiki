@@ -4,6 +4,29 @@ We provide multiple options for the viewer.
 
 We offer standalone apps for Windows and Linux, you can download them from the [releases](https://github.com/stylesuxx/v3xctrl/releases).
 
+### Installation
+
+#### Windows
+
+Download the `.exe` from the [latest release](https://github.com/stylesuxx/v3xctrl/releases/latest) and run it.
+
+#### Linux (Flatpak)
+
+Download the `.flatpak` file from the [latest release](https://github.com/stylesuxx/v3xctrl/releases/latest) and install it:
+
+```bash
+flatpak install --user v3xctrl-viewer-linux-*.flatpak
+```
+
+Then run it:
+
+```bash
+flatpak run com.v3xctrl.viewer
+```
+
+!!! note
+    You need Flatpak installed on your system. Most distributions include it by default. If not, see [flatpak.org/setup](https://flatpak.org/setup/) for instructions.
+
 ### Usage
 
 Press ++esc++ at any time to toggle the menu.
