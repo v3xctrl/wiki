@@ -37,6 +37,18 @@ sudo systemctl start v3xctrl-config-server
 
 - If status is failed, check the logs: `journalctl -u v3xctrl-config-server -n 50`
 
+### Control service does not start after an update
+The layout of `config.json` changed. Package upgrade keeps your old file and the control service fails to start because the keys it expects are missing.
+
+Purge and reinstall the package to get the current defaults:
+
+```bash
+sudo apt-get remove --purge v3xctrl
+sudo apt-get install v3xctrl
+```
+
+The purge removes `config.json`, so steering and throttle have to be calibrated again from the Calibration tab.
+
 ## Video stream
 
 ### Not receiving video stream
